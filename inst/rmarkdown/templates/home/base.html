@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" $if(lang)$ lang="$lang$" xml:lang="$lang$" $endif$>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <title>$if(title)$$title$$endif$</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    $for(header-includes)$ 
+      $header-includes$ 
+    $endfor$ 
+    $for(css)$
+      <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/> 
+    $endfor$
+</head>
+
+<body id="homepage">
+
+  <div id="wrapper">
+    <header>
+
+      <!-- init navbar -->
+      $for(include-before)$ 
+        $include-before$ 
+      $endfor$ 
+      <!-- end navbar -->
+
+      $if(video)$
+        <video autoplay loop>
+          <source src="$video$" type="video/mp4">
+        </video>
+      $endif$
+
+      <div class="header-content">
+        <div class="header-inner">
+          <h1>$if(title)$$title$$endif$</h1>
+          <p>$if(subtitle)$$subtitle$$endif$</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+        $if(toc)$
+        <div id="$idprefix$TOC">
+            $toc$
+        </div>
+        $endif$
+
+        $body$ 
+
+        $for(include-after)$ 
+          $include-after$ 
+        $endfor$
+    </div>
+    
+    $if(mathjax-url)$
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+    <script>
+    (function() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "$mathjax-url$";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+    </script>
+    $endif$
+</body>
+
+</html>
