@@ -37,10 +37,4 @@ $(document).ready(function () {
     $('.post-body').append(sibling)
   })
 
-  /* Crea el footer */
-  // var footer = document.createElement('footer');
-  // $('.post').after(footer)
-  // $('footer').append('<div class="footer-container"></div>')
-  // $('.footer-container').append($('#footer'))
-  // $('#footer').find('h2').css("display", "none")
 })

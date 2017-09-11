@@ -5,3 +5,5 @@ file: recorrido-embed.html
 height: 500px
 ---
 
+```{r, child="_footer.Rmd"}
+```

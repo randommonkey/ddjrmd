@@ -3,3 +3,7 @@ title: "INSERT_TITLE_HERE"
 output: ddjrmd::static
 file: file.html
 ---
+
+```{r, child="_footer.Rmd"}
+```
+
