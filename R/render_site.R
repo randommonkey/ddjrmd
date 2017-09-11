@@ -38,7 +38,7 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
 
     # Add args
     args <- pandoc_metadata_arg("logo",config$logo)
-    args <- c(args, pandoc_metadata_arg("debug",TRUE))
+    #args <- c(args, pandoc_metadata_arg("debug",TRUE))
 
     # Make navbar
     navbar_tempfile <- make_navbar(input, input_files(),config)
@@ -60,6 +60,7 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
       # (which could result in RStudio previewing the wrong file)
       see_also_tempfile <- NULL
       if(!is.null(config$see_also)){
+        args <- c(args, pandoc_metadata_arg("see_also",TRUE))
         see_also_tempfile <- make_see_also(config,basename(x))
       }
 
