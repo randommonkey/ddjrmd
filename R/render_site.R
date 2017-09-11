@@ -55,10 +55,14 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
 
     sapply(files, function(x) {
       message("FILES")
-      str(files)
+
       # we suppress messages so that "Output created" isn't emitted
       # (which could result in RStudio previewing the wrong file)
-      see_also_tempfile <- make_see_also(config,basename(x))
+      see_also_tempfile <- NULL
+      if(!is.null(config$see_also)){
+        see_also_tempfile <- make_see_also(config,basename(x))
+      }
+
       output <- suppressMessages(
         rmarkdown::render(x,
                           output_format = output_format,

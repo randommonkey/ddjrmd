@@ -105,9 +105,9 @@ input_as_dir <- function(input) {
 }
 
 # return a string as a tempfile
-as_tmpfile <- function(str) {
+as_tmpfile <- function(str, prefix = "rmarkdown-str") {
   if (length(str) > 0) {
-    str_tmpfile <- tempfile("rmarkdown-str", fileext = ".html")
+    str_tmpfile <- tempfile(prefix, fileext = ".html")
     writeLines(str, str_tmpfile, useBytes =  TRUE)
     str_tmpfile
   } else {
