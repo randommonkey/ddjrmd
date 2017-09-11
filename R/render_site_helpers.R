@@ -3,6 +3,7 @@
 make_see_also <- function(config, f){
   see_also <- config$see_also
   see_also <- Filter(function(x){
+    if(x == "index.Rmd") return(FALSE)
     tools::file_path_sans_ext(x$href) != tools::file_path_sans_ext(f)
     },see_also)
   see_also <- lapply(see_also,function(x){
