@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" $if(lang)$ lang="$lang$" xml:lang="$lang$" $endif$>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <title>$if(title)$$title$$endif$</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    $for(header-includes)$ 
+      $header-includes$ 
+    $endfor$ 
+    $for(css)$
+      <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/> 
+    $endfor$
+</head>
+
+<body>
+
+      $for(include-before)$ 
+        $include-before$ 
+      $endfor$ 
+
+    <iframe src="$file$" width = "100%" seamless $if(height)$height="$height$"$endif$></iframe>
+
+    $for(include-after)$ 
+      $include-after$ 
+    $endfor$
+    
+</body>
+
+</html>

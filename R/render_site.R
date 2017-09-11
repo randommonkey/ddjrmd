@@ -43,11 +43,22 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
     # Make navbar
     navbar_tempfile <- make_navbar(input, input_files(),config)
 
+    # Make see also
+    ## make it for each Rmd from site config, removing current post
+
+    # Make footer
+    footer_file <- system.file("rmarkdown/site/_footer.html", package = "ddjrmd")
+    footer_lines <- paste(readLines(footer_file),collapse = "\n")
+    footer_tempfile <- as_tmpfile(footer_lines)
+
     ## Render files
 
     sapply(files, function(x) {
+      message("FILES")
+      str(files)
       # we suppress messages so that "Output created" isn't emitted
       # (which could result in RStudio previewing the wrong file)
+      see_also_tempfile <- make_see_also(config,basename(x))
       output <- suppressMessages(
         rmarkdown::render(x,
                           output_format = output_format,
@@ -56,7 +67,10 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
                                                 self_contained = FALSE,
                                                 #pandoc_args = c("--metadata","debug=TRUE"),
                                                 pandoc_args = args,
-                                                includes = list(before_body = navbar_tempfile)),
+                                                includes = list(before_body = navbar_tempfile,
+                                                                after_body = c(
+                                                                  see_also_tempfile,
+                                                                  footer_tempfile))),
                           envir = envir,
                           quiet = quiet,
                           encoding = encoding)
@@ -179,27 +193,7 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
   )
 }
 
-make_navbar <- function(input,files, config){
-  #files <- input_files()
-  navbar_template_file <- system.file("rmarkdown/site/_navbar.html", package = "ddjrmd")
-  navbar_template <- paste(readLines(navbar_template_file),collapse = "\n")
 
-  if(is.null(config$navbar)){
-    textHref <- lapply(files,function(x){
-      list(href = paste0(tools::file_path_sans_ext(x),".html"), text = yaml_front_matter(file.path(input,x))$title)
-    })
-  }else{
-    textHref <- config$navbar$links
-  }
-
-  links <- lapply(textHref,function(x){
-    str_tpl_format('<li><a href="./{href}">{text}</a></li>',x)
-  })
-  links <- paste(unlist(links),collapse = "\n")
-
-  navbar_html_str <- str_tpl_format(navbar_template, list(logo = config$logo, links = links))
-  as_tmpfile(navbar_html_str)
-}
 
 
 pandoc_metadata_arg <- function(name, value) {

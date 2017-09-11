@@ -3,6 +3,7 @@
 export(ddj_site)
 export(home)
 export(minimal)
+export(static)
 export(story)
 export(str_tpl_format)
 export(yaml_front_matter)

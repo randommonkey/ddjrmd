@@ -10,7 +10,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
     <title>$if(title)$$title$$endif$</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -48,19 +48,17 @@
       </div>
     </header>
 
-    <div class="container">
-        $if(toc)$
-        <div id="$idprefix$TOC">
-            $toc$
-        </div>
-        $endif$
-
-        $body$ 
-
-        $for(include-after)$ 
-          $include-after$ 
-        $endfor$
+    $if(toc)$
+    <div id="$idprefix$TOC">
+        $toc$
     </div>
+    $endif$
+
+    $body$ 
+
+    $for(include-after)$ 
+      $include-after$ 
+    $endfor$
     
     $if(mathjax-url)$
     <!-- dynamically load mathjax for compatibility with self-contained -->

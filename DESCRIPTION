@@ -1,6 +1,6 @@
 Package: ddjrmd
 Type: Package
-Title: Alternate R Markdown Templates
+Title: Alternate R Markdown Templates for DDJ sites
 Version: 0.3.3.9000
 Date: 2016-02-06
 Author: Juan Pablo Marin Diaz <jpmarindiaz@gmail.com>

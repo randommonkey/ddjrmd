@@ -1,32 +1,33 @@
+
 /*STORY*/
 
-.topnav.topnav-post {
+.topnav {
   border-bottom: 1px solid rgba(0,0,0,0.1);
   transition: all 0.5s linear;
 }
-.topnav.topnav-post .special-wrapper .special-title {
+.topnav .special-wrapper .special-title {
   color: #2a2a2a;
 }
-.topnav.topnav-post .special-wrapper .hamburger span.hamburger-inner,
-.topnav.topnav-post .special-wrapper .hamburger span.hamburger-inner:after,
-.topnav.topnav-post .special-wrapper .hamburger span.hamburger-inner:before {
+.topnav .special-wrapper .hamburger span.hamburger-inner,
+.topnav .special-wrapper .hamburger span.hamburger-inner:after,
+.topnav .special-wrapper .hamburger span.hamburger-inner:before {
   background: #2a2a2a;
 }
-.topnav.topnav-post .special-wrapper img {
+.topnav .special-wrapper img {
   filter: brightness(0);
 }
-.topnav.topnav-post.open .special-wrapper .hamburger span.hamburger-inner,
-.topnav.topnav-post.open .special-wrapper .hamburger span.hamburger-inner:after,
-.topnav.topnav-post.open .special-wrapper .hamburger span.hamburger-inner:before {
+.topnav.open .special-wrapper .hamburger span.hamburger-inner,
+.topnav.open .special-wrapper .hamburger span.hamburger-inner:after,
+.topnav.open .special-wrapper .hamburger span.hamburger-inner:before {
   background: #f4f4f6;
 }
-.topnav.topnav-post.open .special-wrapper .special-title {
+.topnav.open .special-wrapper .special-title {
   color: #f4f4f6;
 }
-.topnav.topnav-post.open .special-wrapper img {
+.topnav.open .special-wrapper img {
   filter: brightness(0) invert(1);
 }
-.topnav.topnav-post.affix {
+.topnav.affix {
   background: rgba(255,255,255,0.85);
   border-bottom: border-bottom: 1px solid rgba(0,0,0,0.1);
 }

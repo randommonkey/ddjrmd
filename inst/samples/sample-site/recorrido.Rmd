@@ -1,0 +1,7 @@
+---
+title: "Recorrido"
+output: ddjrmd::static
+file: recorrido-embed.html
+height: 500px
+---
+
