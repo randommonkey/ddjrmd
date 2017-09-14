@@ -1,69 +1,90 @@
 $(document).ready(function () {
 
-  $('.hamburger').click(function() {
-    $(this).toggleClass('is-active')
-    $('.full-menu').toggleClass('open')
-    $('.topnav').toggleClass('open')
-  })
-  
-  $('.topnav').affix({ offset: { top: 100 }})
+  /* Responsive images */
+  $('img').addClass('img-responsive');
 
-  /* Contenedor para los posts */
+  /* Center images */
+  $('img').css({'margin-left': 'auto', 'margin-right': 'auto'});
+
+  /* Main container */
   var main = document.createElement('main');
   $('header').after(main);
+
+  /* Intro container */
+  var intro = document.createElement('div');
+  $(intro).addClass('intro').addClass('container');
+  $(main).prepend(intro);
+
+  /* Find first <p> tag and place it into intro container */
+  var introText = $(main).nextAll('p')[0];
+  $(intro).prepend(introText);
+
+  /* Boxes container */
+  var boxes = document.createElement('div');
+  $(boxes).addClass('boxes');
+  var container = document.createElement('div');
+  $(container).addClass('container');
+  var row = document.createElement('div');
+  $(row).addClass('row');
+  var half = $(container).prepend(row);
+  var complete = $(boxes).prepend(half)
+  $(intro).after(complete);
   
-  var next = $(main).next();
-  $(main).append(next)
+  /* Obtain .level2 elements */
+  var boxes = $('.level1.level2');
   
-  /* Obtiene los elementos con la clase 'level2' */
-  var postsBox = $('.level2');
-  
-  /* Elimina el footer del arreglo si existe */
-  postsBox = postsBox.filter(function (index, section) { 
-    var section = $(section)
-    return section.attr('id') !== 'footer'
-  })
-  
-  /* Crea div con clase row */
-  var postsContainer = document.createElement('div');
-  postsContainer.setAttribute('class', 'row');
-  
-  /* Posiciona el div.row antes que cualquier elemento con clase 'level2' */
-  postsBox[0].before(postsContainer);
-  
-  $.map(postsBox, function(postBox, index) {
-    /* Posiciona los posts dentro de div.row */
-    postsContainer.appendChild(postBox)
-    /* Agrega clases BS para los posts */
-    $(postBox).addClass('col-md-4').addClass('col-sm-6').addClass('col-xs-12').addClass('story')
-    /* Elimina lo que no sea de nivel dos y div contenedor */
-    $(postBox).find($('.level3')).remove()
-    $(postBox).find($('.level4')).remove()
-    $(postBox).find($('.level5')).remove()
-    $(postBox).find($('.level6')).remove()
-    /* Agrega contenedor secundario */
-    $(postBox).prepend('<div class="story-box" id="story-box-' + index + '"></div>')
-    /* Encuentra imágenes y las posiciona dentro de story-box*/
-    $('#story-box-' + index)
-      .prepend($(postBox).find('img'))
-      .append('<div class="story-content" id="story-content-' + index + '"></div>')
-    $('#story-content-' + index)
-      .prepend($(postBox).find('h2'))
-      .append($(postBox).find('p'))
+  /* Delete footer if exists */
+  boxes = boxes.filter(function (index, section) { 
+    var section = $(section);
+    return section.attr('id') !== 'footer';
   });
+
+  $.map(boxes, function(box, index) {
+    /* Place boxes into boxes container */
+    $(row).prepend(box);
+    /* Add some classes */
+    $(box).addClass('story').addClass('col-md-4').addClass('col-sm-6').addClass('col-xs-12');
+    /* Remove other titles sections */
+    $(box).find($('.level3')).remove();
+    $(box).find($('.level4')).remove();
+    $(box).find($('.level5')).remove();
+    $(box).find($('.level6')).remove();
+    /* Find first link and reset */
+    var link = $(box).find('a')[0];
+    $(link).text('');
+    /* Find first img */
+    var img = $(box).find('img')[0];
+    /* Place link at top */
+    $(box).prepend(link);
+    /* Container inside link */
+    var storyBox = document.createElement('div');
+    $(storyBox).addClass('story-box');
+    $(link).prepend(storyBox);
+    var storyImg = document.createElement('div');
+    $(storyImg).addClass('story-img')
+    /* Image inside container */
+    $(storyBox).prepend(storyImg);
+    $(storyImg).prepend(img);
+    /* Get link siblings */
+    var siblings = $(link).nextAll();
+    /* box content */
+    var storyContent = document.createElement('div');
+    $(storyContent).addClass('story-content');
+    $(storyBox).append(storyContent);
+    /* Siblings in box content */
+    $(storyContent).prepend(siblings);
+    /* Hide description */
+    $(box).find('p').css('display','none');
+  })
+
+
+  // Carrousel
+
+
+
   
-  /* Imágenes responsive */
-  $('img').addClass('img-responsive')
 
   /* ScrollReveal */
   window.sr = ScrollReveal();
   sr.reveal('.story-box', { duration: 1800 }, 300);
-
-  /* Crea el footer */
-  var footer = document.createElement('footer');
-  $('main').after(footer)
-  console.log($(footer))
-  $('footer').append('<div class="footer-container"></div>')
-  $('.footer-container').append($('#footer'))
-  $('#footer').find('h2').css("display", "none")
 })

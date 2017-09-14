@@ -28,8 +28,8 @@ static <- function(number_sections = FALSE,
   dep_site <- htmltools::htmlDependency("site", "0.1",
                                         src = system.file("rmarkdown", "site",
                                                           package = "ddjrmd"),
-                                        stylesheet=c("hamburgers.min.css", "index.css"),
-                                        script = "index.js",
+                                        stylesheet=c("hamburgers.min.css", "site.css"),
+                                        script = "site.js",
                                         all_files = FALSE
   )
 

@@ -1,0 +1,39 @@
+<script id="boxes-template" type="text/x-handlebars-template">
+    <div class="newBoxes row" id="{{id}}">
+        <!-- <h4>{{id}}</h4> -->
+        <!-- <h4>{{type}}</h4> -->
+        {{#data}}
+            <div class="boxContainer col-md-4 col-sm-4 col-xs-6">
+            {{#if img}}
+                <div class="box" style="background-image: url({{img}})  no-repeat center center fixed;;">        
+            {{else}}
+                <div class="box">        
+            {{/if}}
+                    <div class="boxTitleContainer">
+                        <a href="{{link}}">
+                            <h4>{{title}}</h4>
+                        </a>
+                    </div>  
+                </div>
+            </div>
+        {{/data}}
+    </div>
+</script>
+<script id="carrousel-template" type="text/x-handlebars-template">
+    <div class="newCarrousel row" id="{{id}}">
+        <!-- <h4>{{id}}</h4> -->
+        <!-- <h4>{{type}}</h4> -->
+        {{#data}}
+        <div class="slide">
+            <h2>{{title}}</h2>
+            <a href="{{link}}">link</a>
+        </div>
+        {{/data}}
+    </div>
+</script>
+<script type="text/javascript">
+  var boxes = $("#boxes-template").html();
+  var boxesTemplate = Handlebars.compile(boxes);
+  var carrousel = $("#carrousel-template").html();
+  var carrouselTemplate = Handlebars.compile(carrousel);
+</script>

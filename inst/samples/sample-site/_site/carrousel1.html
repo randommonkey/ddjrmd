@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Carrousel</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<link href="assets/site-0.1/hamburgers.min.css" rel="stylesheet" />
+<link href="assets/site-0.1/site.css" rel="stylesheet" />
+<script src="assets/site-0.1/site.js"></script>
+<link href="assets/carrousel-0.1/carrousel.css" rel="stylesheet" />
+<script src="assets/carrousel-0.1/carrousel.js"></script>
+
+
+
+</head>
+
+<body>
+
+<h1>Carrousel</h1>
+
+  <nav class="topnav topnav-post">
+    <div class="full-menu">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+<li><a href="./realidad.html">La realidad de los árboles bogotanos</a></li>
+<li><a href="./recorrido.html">Recorrido</a></li>
+      </ul>
+    </div>
+    <div class="container-fluid">
+      <div class="special-wrapper">
+        <button class="hamburger hamburger--spin" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <span class="special-title">Árboles de Bogotá</span>
+        <img src="ds.png" alt="">
+      </div>
+    </div>
+  </nav>
+
+
+
+
+<div id="slide-1-title" class="section level2">
+<h2>Slide 1 title</h2>
+<p>G’Kar: It is said that the future is always born in pain. The history of war is the history of pain. If we are wise, what is born of that pain matures into the promise of a better world, because we learn that we can no longer afford the mistakes of the past. Dr. Stephen Franklin: Doesn’t anyone listen to one damn word I say? Captain John Sheridan: No surrender, no retreat. [Opening narration, season 4]</p>
+<p><img src="carrousel1_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="slide-2-title" class="section level2">
+<h2>Slide 2 title</h2>
+<p>Commander Jeffrey David Sinclair: Everyone lies, Michael. The innocent lie because they don’t want to be blamed for something they didn’t do and the guilty lie because they don’t have any other choice. Lt. Corwin: Do we trust no-one then? Cmdr. Susan Ivanova: No, trust Ivanova, trust yourself, anybody else, shoot’em. Susan Ivanova: If I live through this without completely losing my mind, it will be a miracle of Biblical proportions.</p>
+<p><img src=http://via.placeholder.com/300x200/></p>
+</div>
+<div id="slide-3-title" class="section level2">
+<h2>Slide 3 Title</h2>
+<p><img src=http://via.placeholder.com/300x200/></p>
+<p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
+<!-- footer -->
+</div>
+<div id="footer" class="section level2">
+<h2>FOOTER</h2>
+<p>Este sitio fue construido con ddjrmd. Toda la información sobre nosotros está disponible en <a href="http://datasketch.co" class="uri">http://datasketch.co</a> No olvide consultar el paso a paso.</p>
+<p>Esta investigación se realizó con el apoyo de:</p>
+<ul>
+<li>Esta</li>
+<li>Y esta otra</li>
+</ul>
+</div>
+
+<script type="text/javascript">
+ var seealsoData= [{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}] ;
+</script> <script id="seealso-template" type="text/x-handlebars-template">
+    <div class="seealsoContainer">
+        <h4>{{id}}</h4>
+        <h4>{{type}}</h4>
+        {{#data}}
+        <div class="seealso">
+            <h2>{{title}}</h2>
+            <a href="{{link}}">link</a>
+        </div>
+        {{/data}}
+    </div>
+</script>
+<script type="text/javascript">
+  var seealso = $("#seealso-template").html();
+  var seealsoTemplate = Handlebars.compile(seealso);
+  $('#seealsoContent').append(seealsoTemplate(seealsoData));
+</script>
+<!-- <footer>
+    <div class="footer-container">
+        <div id="footer">
+        </div>
+    </div>
+</footer> -->
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active" style="background: #eee;">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <h1>Lorem ipsum dolore sit amet</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae autem placeat odit aspernatur, quos quas totam a maxime cupiditate ullam libero ducimus corporis doloribus nisi fugiat harum modi culpa debitis?</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item" style="background-image: url('http://via.placeholder.com/1900x1080')">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item" style="background-image: url('http://via.placeholder.com/1900x1080')">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item" style="background-image: url('http://via.placeholder.com/1900x1080')">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+
+<footer>
+  <div class="footer-container">
+  </div>
+</footer>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+
+</body>
+</html>

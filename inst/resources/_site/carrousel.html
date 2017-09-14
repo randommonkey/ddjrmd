@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Full Slider</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active" style="background: #eee;">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <h1>Lorem ipsum dolore sit amet</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae autem placeat odit aspernatur, quos quas totam a maxime cupiditate ullam libero ducimus corporis doloribus nisi fugiat harum modi culpa debitis?</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item" style="background-image: url('http://via.placeholder.com/1900x1080')">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item" style="background-image: url('http://via.placeholder.com/1900x1080')">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item" style="background-image: url('http://via.placeholder.com/1900x1080')">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $('.carousel').carousel({
+  interval: 0,
+    })
+
+  </script>
+</body>
+</html>

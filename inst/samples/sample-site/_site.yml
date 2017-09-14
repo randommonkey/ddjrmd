@@ -8,7 +8,10 @@ navbar:
     - text: "Recorrido"
       href: recorrido.html
 see_also:
-  - text: "La realidad de los árboles bogotanos"
-    href: realidad.html
-  - text: "Recorrido"
-    href: recorrido.html
+  - title: "Ver también"
+  - links:
+    - text: "La realidad de los árboles bogotanos"
+      href: realidad.html
+    - text: "Recorrido"
+      href: recorrido.html
+css: styles.css

@@ -7,8 +7,10 @@ make_see_also <- function(config, f){
     tools::file_path_sans_ext(x$href) != tools::file_path_sans_ext(f)
     },see_also)
   see_also <- lapply(see_also,function(x){
-    str_tpl_format('<div id="see_also">
-                 <div class="cols-md-3"><a href="./{href}">{text}</a></div>
+    str_tpl_format('<div class="see_also">
+                <h2>{title}</h2>
+                 <a href="./{href}">{text}</a>
+                <!--<img src="{image}">-->
                  </div>
                  ',x)
   })

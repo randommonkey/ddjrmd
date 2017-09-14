@@ -40,11 +40,22 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
     args <- pandoc_metadata_arg("logo",config$logo)
     #args <- c(args, pandoc_metadata_arg("debug",TRUE))
 
+    # Add custom site css
+    if(!is.null(config$css))
+      args <- c(args, "--css", rmarkdown::pandoc_path_arg(config$css))
+
     # Make navbar
     navbar_tempfile <- make_navbar(input, input_files(),config)
 
     # Make see also
     ## make it for each Rmd from site config, removing current post
+    #see_also_tempfile <- make_see_also(config,basename(x))
+    see_also <- jsonlite::toJSON(unlist(config$see_also,recursive = FALSE), auto_unbox = TRUE)
+    see_also_html_str <- paste('<script type="text/javascript">\n','var seealsoData=',see_also,";\n</script>",collapse = "")
+    see_also_handlebars <- system.file("rmarkdown/site/_see_also.html", package = "ddjrmd")
+    see_also_handlebars <- paste(readLines(see_also_handlebars),collapse = "\n")
+    see_also_html_str <- paste(see_also_html_str,see_also_handlebars,collapse = "\n")
+    see_also_tempfile <- as_tmpfile(see_also_html_str)
 
     # Make footer
     footer_file <- system.file("rmarkdown/site/_footer.html", package = "ddjrmd")
@@ -55,14 +66,15 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
 
     sapply(files, function(x) {
       message("FILES")
-
+      args <- c(args, pandoc_metadata_arg("currentFile",tools::file_path_sans_ext(x)))
       # we suppress messages so that "Output created" isn't emitted
       # (which could result in RStudio previewing the wrong file)
-      see_also_tempfile <- NULL
-      if(!is.null(config$see_also)){
-        args <- c(args, pandoc_metadata_arg("see_also",TRUE))
-        see_also_tempfile <- make_see_also(config,basename(x))
-      }
+
+      # see_also_tempfile <- NULL
+      # if(!is.null(config$see_also)){
+      #   args <- c(args, pandoc_metadata_arg("see_also",TRUE))
+      #   see_also_tempfile <- make_see_also(config,basename(x))
+      # }
 
       output <- suppressMessages(
         rmarkdown::render(x,

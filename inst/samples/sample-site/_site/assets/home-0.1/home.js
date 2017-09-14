@@ -1,68 +1,102 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-  $('.hamburger').click(function() {
-    $(this).toggleClass('is-active')
-    $('.full-menu').toggleClass('open')
-    $('.topnav').toggleClass('open')
-  })
-  
-  $('.topnav').affix({ offset: { top: 100 }})
+    $('.hamburger').click(function() {
+        $(this).toggleClass('is-active')
+        $('.full-menu').toggleClass('open')
+        $('.topnav').toggleClass('open')
+    });
 
-  /* Contenedor para los posts */
-  var main = document.createElement('main');
-  $('header').after(main);
-  
-  var next = $(main).next();
-  $(main).append(next)
-  
-  /* Obtiene los elementos con la clase 'level2' */
-  var postsBox = $('.level2');
-  
-  /* Elimina el footer del arreglo si existe */
-  postsBox = postsBox.filter(function (index, section) { 
-    var section = $(section)
-    return section.attr('id') !== 'footer'
-  })
-  
-  /* Crea div con clase row */
-  var postsContainer = document.createElement('div');
-  postsContainer.setAttribute('class', 'row');
-  
-  /* Posiciona el div.row antes que cualquier elemento con clase 'level2' */
-  postsBox[0].before(postsContainer);
-  
-  $.map(postsBox, function(postBox, index) {
-    /* Posiciona los posts dentro de div.row */
-    postsContainer.appendChild(postBox)
-    /* Agrega clases BS para los posts */
-    $(postBox).addClass('col-md-4').addClass('col-sm-6').addClass('col-xs-12').addClass('story')
-    /* Elimina lo que no sea de nivel dos y div contenedor */
-    $(postBox).find($('.level3')).remove()
-    $(postBox).find($('.level4')).remove()
-    $(postBox).find($('.level5')).remove()
-    $(postBox).find($('.level6')).remove()
-    /* Agrega contenedor secundario */
-    $(postBox).prepend('<div class="story-box" id="story-box-' + index + '"></div>')
-    /* Encuentra imágenes y las posiciona dentro de story-box*/
-    $('#story-box-' + index)
-      .prepend($(postBox).find('img'))
-      .append('<div class="story-content" id="story-content-' + index + '"></div>')
-    $('#story-content-' + index)
-      .prepend($(postBox).find('h2'))
-      .append($(postBox).find('p'))
-  });
-  
-  /* Imágenes responsive */
-  $('img').addClass('img-responsive')
+    $('.topnav').affix({ offset: { top: 100 } });
 
-  /* ScrollReveal */
-  window.sr = ScrollReveal();
-  sr.reveal('.story-box', { duration: 1800 }, 300);
+    /* Responsive images */
+    $('img').addClass('img-responsive');
 
-  /* Crea el footer */
-  // var footer = document.createElement('footer');
-  // $('main').after(footer)
-  // $('footer').append('<div class="footer-container"></div>')
-  // $('.footer-container').append($('#footer'))
-  // $('#footer').find('h2').css("display", "none")
+    /* Center images */
+    $('img').css({ 'margin-left': 'auto', 'margin-right': 'auto' });
+
+    /* Main container */
+    var main = document.createElement('main');
+    $('header').after(main);
+
+    /* Intro container */
+    var intro = document.createElement('div');
+    $(intro).addClass('intro').addClass('container');
+    $(main).prepend(intro);
+
+    /* Find first <p> tag and place it into intro container */
+    var introText = $(main).nextAll('p')[0];
+    $(intro).prepend(introText);
+
+    // Handle sections
+    var sections = $('.section.level1').map(function() {
+        var section = {}
+        section.id = $(this).attr('id');
+        section.type = $(this).attr('class').replace("section level1 ", "");
+        var $div = $("<div>", { id: "new-" + section.id, "class": section.type });
+        $("body").append($div);
+        // console.log($(this))
+        if (section.type == "boxes") {
+            // console.log("#" + section.id + '>.section.level2')
+            var boxes = $("#" + section.id + '>.section.level2');
+            /* Delete footer if exists */
+            boxes = boxes.filter(function(index, section) {
+                var section = $(section);
+                return section.attr('id') !== 'footer';
+            });
+            section.data = boxes.map(function(index, box) {
+                var link = $(box).find('a')[0];
+                link = $(link).attr("href")
+                var title = $(box).find('h2')[0];
+                title = $(title).text()
+                var img = $(box).find('img')[0];
+                img = $(img).attr("src")
+                // var paragraph = $(box).find('p');
+                // paragraph = $(paragraph).outerHTML();
+                var paragraph = "paragraph";
+                return ({ title: title, link: link, img: img, paragraph: paragraph })
+            })
+            /* Place link at top */
+            // console.log("BOXES", section.data)
+        }
+        if (section.type == "carrousel") {
+            var slides = $("#" + section.id + '>.section.level2');
+            slides = slides.filter(function(index, section) {
+                var section = $(section);
+                return section.attr('id') !== 'footer';
+            });
+            section.data = slides.map(function(index, slide) {
+                var link = $(slide).find('a')[0];
+                link = $(link).attr("href")
+                var title = $(slide).find('h2')[0];
+                title = $(title).text()
+                var img = $(slide).find('img')[0];
+                img = $(img).attr("src")
+                // var paragraph = $(slide).find('p');
+                // paragraph = $(paragraph).outerHTML();
+                var paragraph = "paragraph";
+                return ({ title: title, link: link, img: img, paragraph: paragraph })
+            })
+        }
+        return section
+    });
+    // Remove all parsed sections
+    $('.section.level1').remove();
+
+    // console.log("SECTIONS", sections)
+
+    // Render templates
+    sections.map(function(index, s) {
+        s.data = $.makeArray(s.data);
+        if (s.type == "boxes") {
+            $('#parsedContent').append(boxesTemplate(s));
+        }
+        if (s.type == "carrousel") {
+            $('#parsedContent').append(carrouselTemplate(s));
+        }
+    })
+
+
+    /* ScrollReveal */
+    window.sr = ScrollReveal();
+    sr.reveal('.story-box', { duration: 1800 }, 300);
 })

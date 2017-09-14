@@ -11,6 +11,7 @@
     <title>$if(title)$$title$$endif$</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -56,9 +57,19 @@
 
     $body$ 
 
+    <div id="parsedContent" class="row"></div>
+
+    <div id="seealsoContent" class="row"></div>
+
     $for(include-after)$ 
       $include-after$ 
     $endfor$
+
+
+    <footer>
+      <div class="footer-container">
+      </div>
+    </footer>
     
     $if(mathjax-url)$
     <!-- dynamically load mathjax for compatibility with self-contained -->

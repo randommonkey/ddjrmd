@@ -32,7 +32,7 @@
   border-bottom: border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 .post {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 .post-content .post-title {
   width: 100%;
@@ -46,11 +46,10 @@
   width: 100%;
   height: auto;
 }
-.post-content .post-body {
-  width: 100%;
-}
-.post-content .post-body p {
-  text-align: left;
+.post-content .post-margin {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .post-content .post-body .post-body-img {
   display: block;
@@ -61,6 +60,9 @@
 .post-content .post-body .post-subtitle {
   margin-top: 0;
 }
+div.fullwidth {
+  width: 100%;
+}
 @media (min-width: 768px) {
   .post-content .post-title {
     width: 60%;
@@ -70,18 +72,29 @@
     margin-bottom: 30px;
     margin-top: 30px;
   }
-  .post-content .post-body {
+  .post-content .post-margin {
     width: 60%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .post-content .post-body p {
+  .post-content .post-margin p {
     line-height: 30px;
     font-size: 16px;
-    margin-bottom: 30px;
   }
   .post-content .post-body .post-subtitle {
     margin-top: 0;
     margin-bottom: 30px;
   }
 }
-
+.see_also {
+  margin-bottom: 20px;
+}
+.related-img {
+  position: relative;
+}
+.see_also a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

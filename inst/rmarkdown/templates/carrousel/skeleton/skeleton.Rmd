@@ -1,0 +1,30 @@
+---
+title: "INSERT_TITLE_HERE"
+output: ddjrmd::carrousel
+---
+
+## Slide 1 title
+
+G'Kar: It is said that the future is always born in pain. The history of war is the history of pain. If we are wise, what is born of that pain matures into the promise of a better world, because we learn that we can no longer afford the mistakes of the past. Dr. Stephen Franklin: Doesn't anyone listen to one damn word I say? Captain John Sheridan: No surrender, no retreat. [Opening narration, season 4] 
+
+```{r, fig.show='hold'}
+plot(10:1)
+```
+
+
+## Slide 2 title
+
+Commander Jeffrey David Sinclair: Everyone lies, Michael. The innocent lie because they don't want to be blamed for something they didn't do and the guilty lie because they don't have any other choice. Lt. Corwin: Do we trust no-one then? Cmdr. Susan Ivanova: No, trust Ivanova, trust yourself, anybody else, shoot'em. Susan Ivanova: If I live through this without completely losing my mind, it will be a miracle of Biblical proportions. 
+
+<img src=http://via.placeholder.com/1900x1080/>
+
+## Slide 3 Title
+
+<img src=http://via.placeholder.com/1900x1080/>
+
+Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we'd get better leadership and a little more concern for the future. 
+
+
+<!-- footer -->
+```{r, child="_footer.Rmd"}
+```

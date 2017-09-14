@@ -21,8 +21,8 @@
 
 
 <link href="assets/site-0.1/hamburgers.min.css" rel="stylesheet" />
-<link href="assets/site-0.1/index.css" rel="stylesheet" />
-<script src="assets/site-0.1/index.js"></script>
+<link href="assets/site-0.1/site.css" rel="stylesheet" />
+<script src="assets/site-0.1/site.js"></script>
 <link href="assets/story-0.1/story.css" rel="stylesheet" />
 <script src="assets/story-0.1/story.js"></script>
 
@@ -106,17 +106,36 @@
 </ul>
 </div>
 
-<div id="see_also">
-                 <div class="cols-md-3"><a href="./recorrido.html">Recorrido</a></div>
-                 </div>
-<footer>
+<script type="text/javascript">
+ var seealsoData= [{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}] ;
+</script> <script id="seealso-template" type="text/x-handlebars-template">
+    <div class="seealsoContainer">
+        <h4>{{id}}</h4>
+        <h4>{{type}}</h4>
+        {{#data}}
+        <div class="seealso">
+            <h2>{{title}}</h2>
+            <a href="{{link}}">link</a>
+        </div>
+        {{/data}}
+    </div>
+</script>
+<script type="text/javascript">
+  var seealso = $("#seealso-template").html();
+  var seealsoTemplate = Handlebars.compile(seealso);
+  $('#seealsoContent').append(seealsoTemplate(seealsoData));
+</script>
+<!-- <footer>
     <div class="footer-container">
         <div id="footer">
-            <p>This is the footer Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
         </div>
     </div>
-</footer>
+</footer> -->
 
+<footer>
+  <div class="footer-container">
+  </div>
+</footer>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

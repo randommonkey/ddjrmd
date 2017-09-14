@@ -11,16 +11,18 @@
     <title>Árboles de Bogotá</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
           <link href="assets/site-0.1/hamburgers.min.css" rel="stylesheet" />
-      <link href="assets/site-0.1/index.css" rel="stylesheet" />
-      <script src="assets/site-0.1/index.js"></script>
+      <link href="assets/site-0.1/site.css" rel="stylesheet" />
+      <script src="assets/site-0.1/site.js"></script>
       <link href="assets/home-0.1/home.css" rel="stylesheet" />
       <script src="assets/home-0.1/home.js"></script> 
-        </head>
+              <link rel="stylesheet" href="styles.css" type="text/css" /> 
+    </head>
 
 <body id="homepage">
 
@@ -63,8 +65,9 @@
     </header>
 
     
-    <p>Este es un texto introductorio opcional.</p>
-    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
+    <p>Este es un texto <strong>introductorio</strong> opcional.</p>
+    <div id="posts-boxes" class="section level1 boxes">
+    <h1>Posts Boxes</h1>
     <div id="first-post" class="section level2">
     <h2>First post</h2>
     <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -84,17 +87,50 @@
     <h2>Fourth post</h2>
     <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <p><img src="http://via.placeholder.com/350x150"></p>
-    <div id="level-3" class="section level3">
-    <h3>Level 3</h3>
-    <p>Se ignora esto porque tiene nivel 3</p>
+    </div>
+    </div>
+    <div id="carrousel" class="section level1 carrousel">
+    <h1>Carrousel</h1>
+    <div id="slide-2-title" class="section level2">
+    <h2>Slide 2 title</h2>
     <p>Commander Jeffrey David Sinclair: Everyone lies, Michael. The innocent lie because they don’t want to be blamed for something they didn’t do and the guilty lie because they don’t have any other choice. Lt. Corwin: Do we trust no-one then? Cmdr. Susan Ivanova: No, trust Ivanova, trust yourself, anybody else, shoot’em. Susan Ivanova: If I live through this without completely losing my mind, it will be a miracle of Biblical proportions.</p>
-    <p>Lt. Corwin: [aside] Well, there goes my faith in the Almighty. [Opening narration, season 3] Susan Ivanova: The Babylon Project was our last, best hope for peace. It failed. But in the year of the Shadow War, it became something greater: our last, best hope for victory. The year is 2260. The place - Babylon 5. Alfred Bester: Being a telepath means you’re special and rare and valuable.</p>
+    <p><img src=http://via.placeholder.com/300x200/></p>
+    </div>
+    <div id="slide-3-title" class="section level2">
+    <h2>Slide 3 Title</h2>
+    <p><img src=http://via.placeholder.com/300x200/></p>
+    <p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
     <div id="level-4" class="section level4">
     <h4>Level 4</h4>
     <p>Se ignora esto porque tiene nivel 4</p>
     <p>Delenn: We are star stuff. We are the universe made manifest trying to figure itself out.</p>
     <p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
     <p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future. Kosh Naranek: Understanding is a three-edged sword. Alfred Bester: Much as it might offend their sense of perspective, not everything is about Babylon 5.</p>
+    </div>
+    </div>
+    </div>
+    <div id="audio-boxes" class="section level1 boxes">
+    <h1>Audio Boxes</h1>
+    <div id="first-audio" class="section level2">
+    <h2>First Audio</h2>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+    </iframe>
+    </div>
+    <div id="second-audio" class="section level2">
+    <h2>Second Audio</h2>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+    </iframe>
+    </div>
+    <div id="third-audio" class="section level2">
+    <h2>Third Audio</h2>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+    </iframe>
+    </div>
+    <div id="footer" class="section level2">
+    <h2>FOOTER</h2>
     <p>Este sitio fue construido con ddjrmd. Toda la información sobre nosotros está disponible en <a href="http://datasketch.co" class="uri">http://datasketch.co</a> No olvide consultar el paso a paso.</p>
     <p>Esta investigación se realizó con el apoyo de:</p>
     <ul>
@@ -102,33 +138,84 @@
     <li>Y esta otra</li>
     </ul>
     </div>
-    </div>
     </div> 
 
-          <div id="see_also">
-                       <div class="cols-md-3"><a href="./realidad.html">La realidad de los árboles bogotanos</a></div>
-                       </div>
-                       
-      <div id="see_also">
-                       <div class="cols-md-3"><a href="./recorrido.html">Recorrido</a></div>
-                       </div> 
-          <footer>
+    <div id="parsedContent" class="row"></div>
+
+    <div id="seealsoContent" class="row"></div>
+
+          <script type="text/javascript">
+       var seealsoData= {"title":"Ver también","links":[{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}]} ;
+      </script> <script id="seealso-template" type="text/x-handlebars-template">
+          <div class="seealsoContainer">
+              <h2>{{title}}</h2>
+              {{#links}}
+              <div class="seealso">
+                  <h2>{{title}}</h2>
+                  <a href="{{link}}">link</a>
+              </div>
+              {{/links}}
+          </div>
+      </script>
+      <script type="text/javascript">
+        var seealso = $("#seealso-template").html();
+        var seealsoTemplate = Handlebars.compile(seealso);
+        $(document).ready(function() {
+        	$('#seealsoContent').append(seealsoTemplate(seealsoData));
+        });
+      </script> 
+          <!-- <footer>
           <div class="footer-container">
               <div id="footer">
-                  <p>This is the footer Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
               </div>
           </div>
-      </footer> 
-        
-        <!-- dynamically load mathjax for compatibility with self-contained -->
-    <script>
-    (function() {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-        document.getElementsByTagName("head")[0].appendChild(script);
-    })();
-    </script>
+      </footer> --> 
+          <script id="boxes-template" type="text/x-handlebars-template">
+          <div class="newBoxes row" id="{{id}}">
+              <!-- <h4>{{id}}</h4> -->
+              <!-- <h4>{{type}}</h4> -->
+              {{#data}}
+                  <div class="boxContainer col-md-4 col-sm-4 col-xs-6">
+                  {{#if img}}
+                      <div class="box" style="background-image: url({{img}});">        
+                  {{else}}
+                      <div class="box">        
+                  {{/if}}
+                          <div class="boxTitleContainer">
+                              <a href="{{link}}">
+                                  <h4>{{title}}</h4>
+                              </a>
+                          </div>  
+                      </div>
+                  </div>
+              {{/data}}
+          </div>
+      </script>
+      <script id="carrousel-template" type="text/x-handlebars-template">
+          <div class="newCarrousel row" id="{{id}}">
+              <!-- <h4>{{id}}</h4> -->
+              <!-- <h4>{{type}}</h4> -->
+              {{#data}}
+              <div class="slide">
+                  <h2>{{title}}</h2>
+                  <a href="{{link}}">link</a>
+              </div>
+              {{/data}}
+          </div>
+      </script>
+      <script type="text/javascript">
+        var boxes = $("#boxes-template").html();
+        var boxesTemplate = Handlebars.compile(boxes);
+        var carrousel = $("#carrousel-template").html();
+        var carrouselTemplate = Handlebars.compile(carrousel);
+      </script> 
+    
+
+    <footer>
+      <div class="footer-container">
+      </div>
+    </footer>
+    
     </body>
 
 </html>

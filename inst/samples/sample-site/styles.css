@@ -1,0 +1,23 @@
+.boxContainer{
+  /*padding: 20px;*/
+}
+
+.box{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  /*border: black 1px solid;*/
+  width:100%;
+  max-height: 350px;
+  height:150px;
+  color: red;
+  margin: 10px;
+  padding: 20px 10px 0px 10px;
+
+}
+
+.boxTitleContainer{
+  margin: 10px;
+  border: black 1px solid;
+  min-height: 100px;
+}
