@@ -3,9 +3,12 @@
 }
 
 .box{
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*border: black 1px solid;*/
+    /*no-repeat center center fixed*/
+  background-repeat: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  /*border: black 1px solid;*/
   width:100%;
   max-height: 350px;
   height:150px;
