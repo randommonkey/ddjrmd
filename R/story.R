@@ -49,21 +49,13 @@ story <- function(number_sections = FALSE,
   template <- "default"
   code_folding <- "none"
 
-  dep_site <- htmltools::htmlDependency("site", "0.1",
-                                   src = system.file("rmarkdown", "site",
-                                                     package = "ddjrmd"),
-                                   stylesheet=c("hamburgers.min.css", "site.css"),
-                                   script = "site.js",
-                                   all_files = FALSE
-                                   )
-
   dep <- htmltools::htmlDependency("story", "0.1",
                                    src = system.file("rmarkdown", "templates", "story", "resources",
                                                      package = "ddjrmd"),
                                    stylesheet=c("story.css"),
                                    script = "story.js")
 
-  extra_dependencies <- append(extra_dependencies, list(dep_site, dep))
+  extra_dependencies <- append(extra_dependencies, list(dep))
 
   args <- c("--standalone")
   args <- c(args, "--section-divs")

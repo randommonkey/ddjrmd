@@ -23,10 +23,12 @@
 <link href="assets/site-0.1/hamburgers.min.css" rel="stylesheet" />
 <link href="assets/site-0.1/site.css" rel="stylesheet" />
 <script src="assets/site-0.1/site.js"></script>
+<script src="assets/site-0.1/handlebars.min.js"></script>
 <link href="assets/carrousel-0.1/carrousel.css" rel="stylesheet" />
 <script src="assets/carrousel-0.1/carrousel.js"></script>
 
 
+<link rel="stylesheet" href="styles.css" type="text/css" />
 
 </head>
 
@@ -49,7 +51,7 @@
             <span class="hamburger-inner"></span>
           </span>
         </button>
-        <span class="special-title">Árboles de Bogotá</span>
+        <!-- <span class="special-title">Árboles de Bogotá</span> -->
         <img src="ds.png" alt="">
       </div>
     </div>
@@ -85,23 +87,24 @@
 </div>
 
 <script type="text/javascript">
- var seealsoData= [{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}] ;
+ var seealsoData= {"title":"Ver también","links":[{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}]} ;
 </script> <script id="seealso-template" type="text/x-handlebars-template">
     <div class="seealsoContainer">
-        <h4>{{id}}</h4>
-        <h4>{{type}}</h4>
-        {{#data}}
+        <h2>{{title}}</h2>
+        {{#links}}
         <div class="seealso">
             <h2>{{title}}</h2>
             <a href="{{link}}">link</a>
         </div>
-        {{/data}}
+        {{/links}}
     </div>
 </script>
 <script type="text/javascript">
   var seealso = $("#seealso-template").html();
   var seealsoTemplate = Handlebars.compile(seealso);
-  $('#seealsoContent').append(seealsoTemplate(seealsoData));
+  $(document).ready(function() {
+  	$('#seealsoContent').append(seealsoTemplate(seealsoData));
+  });
 </script>
 <!-- <footer>
     <div class="footer-container">

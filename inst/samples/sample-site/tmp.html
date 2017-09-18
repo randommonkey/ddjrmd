@@ -137,7 +137,7 @@
                 <div class="box">        
             {{/if}}
                     <a href="{{link}}">
-                        <h2>{{title}}</h2>
+                        <h2>{{title}} {{@index}}</h2>
                     </a>
                 </div>
             </div>
@@ -149,6 +149,7 @@
                 <h4>{{id}}</h4>
                 <h4>{{type}}</h4>
                 {{#data}}
+                {{@index}}
                 <div class="slide">
                     <h2>{{title}}</h2>
                     <a href="{{link}}">link</a>

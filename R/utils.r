@@ -365,3 +365,29 @@ str_tpl_format <- function(tpl, l){
     return( unlist(lapply(myTranspose(l), function(l, tpl) str_tpl_format(tpl, l), tpl = tpl)) )
   }
 }
+
+
+
+##
+
+`%||%` <- function (x, y)
+{
+  if (is.empty(x))
+    return(y)
+  else if (is.null(x) || is.na(x))
+    return(y)
+  else if (class(x) == "character" && nchar(x) == 0)
+    return(y)
+  else x
+}
+
+is.empty <- function (x)
+{
+  !as.logical(length(x))
+}
+
+file_path_sans_ext <- function (x)
+{
+  sub("([^.]+)\\.[[:alnum:]]+$", "\\1", x)
+}
+

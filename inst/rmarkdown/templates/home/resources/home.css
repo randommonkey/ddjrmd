@@ -1,96 +1,147 @@
-main .story {
-  margin-bottom: 30px;
+#homepage::-webkit-scrollbar {
+  display: none;
 }
-main .story .story-box {
+#wrapper {
   position: relative;
+  height: 100%;
 }
-main .story .story-box .story-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%,-50%);
-  padding: 0 10px;
-  color: #757575;
-}
-main .story .story-box .story-content h2 {
-  font-size: 25px;
-}
-main .story .story-box .story-content p {
-  text-align: justify;
-}
-.story-img {
-  position: relative;
-}
-.story-img:before {
-  content: '';
-  border: 4px solid #000;
-  height: 80%;
-  position: absolute;
-  width: 70%;
-  top: 10%;
-  left: 15%;
-}
-video {
-  position: absolute;
-  object-fit: cover;
-  width: 100%;
-  height: 30vh;
+
+.topnav {
+  background: transparent;
+  height: 50px;
   top: 0;
   left: 0;
-  z-index: -1;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  margin-bottom: 20px;
 }
-.intro.container {
+
+video {
+  z-index: -1;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+main .intro.container {
+  color: #3c3c3b;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 30px;
-  text-align: center;
-  font-size: 18px;
-  color: #636463;
+  text-align: justify;
 }
-.intro.container p strong {
+main .intro.container p strong {
+  background: #a0a336;
   font-weight: normal !important;
-  background: #a8d5be;
 }
-.intro.container p i {
+main .intro.container p em {
+  color: #a0a336;
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
   font-style: normal !important;
-  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
   text-transform: uppercase;
 }
-.stories {
-  background: #f0f1e6;
-  padding-top: 30px;
+main .stories {
+  background: #a0a336;
+  padding-top: 40px;
 }
+main .stories .stories-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly !important;
+}
+main .stories .story-box {
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+}
+main .stories .story-box .story-box-image {
+  position: relative;
+}
+main .stories .story-box .story-box-image:before {
+  border: 5px solid #ffffff;
+  content: '';
+  height: 90%;
+  left: 15%;
+  position: absolute;
+  top: 5%;
+  width: 70%;
+}
+main .stories .story-box .story-box-image img {
+  margin: 0 auto;
+  transition: all 0.5s linear;
+}
+main .stories .story-box .story-box-title {
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.carousel-inner {
+  background: #fff9e6;
+}
+.carousel .item {
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background: no-repeat center center scroll;
+  min-height: 300px;
+  height: 60vh;
+}
+.carousel .item .container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel-inner .item .container h2 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+.left.carousel-control,
+.right.carousel-control {
+  background: transparent;
+}
+.apps-box {
+  display: flex;
+}
+.apps-box .app {
+  width: 100%;
+}
+
 /* Media Queries */
-@media (min-width: 768px) {
-  .topnav .special-wrapper .special-title {
-    display: inline-block;
-  }
-  .header-content .header-inner {
-    width: 70%;
-    margin: 0 auto;
-  }
-  .intro.container {
-    font-size: 30px;
-  }
-  .intro.container p i {
-    font-size: 40px;
-  }
-}
-@media (min-width: 992px) {
-  .full-menu ul li a {
-    font-size: 40px;
-  }
-  .header-content .header-inner {
+
+@media screen and (min-width: 768px) {
+  header { height: 50%; }
+  .full-menu ul li a { font-size: 23px; }
+  main .stories .story-box { width: 50%; }
+  .apps-box .app {
     width: 50%;
-    margin: 0 auto;
   }
 }
-@media (min-width:1200px) {
-  .intro.container {
-    width: 70%;
+@media screen and (min-width: 992px) {
+  main .intro.container { 
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%
   }
+  main .intro.container p em { font-size: 50px; }
+  .full-menu ul li a { font-size: 28px; }
+  main .stories .story-box { width: 33.33%; }
 }

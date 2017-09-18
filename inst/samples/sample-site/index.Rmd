@@ -1,14 +1,16 @@
 ---
-title: "Árboles de Bogotá"
-subtitle: "Las historias contadas por cada árbol de la ciudad"
+title: ""
+subtitle: ""
 output: ddjrmd::home
 image: http://via.placeholder.com/1200x600
 video: "videos/clip.mp4"
+videogif: "videos/clip.gif"
+logo_special: images/logo-especial.png
 site: ddjrmd::ddj_site
 ---
 
-Este es un texto **introductorio** opcional.
-
+En Bogotá hay **1.2 millones de árboles públicos** sembrados en vías, parques, rondas de ríos y aceras. Sin importar su tamaño o especie, **no son suficientes para mitigar la huella ambiental** de la ciudad ni para garantizar el bienestar de los bogotanos.
+_¿QUÉ HACER?_
 
 Posts Boxes {.boxes}
 ======================
@@ -23,6 +25,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <img src="http://via.placeholder.com/350x150">
 
+[link 1](1.html)
+
 ## Second post is a figure
 
 This is the abstract
@@ -30,6 +34,8 @@ This is the abstract
 ```{r, fig.show='hold'}
 plot(1:10)
 ```
+
+[link 2](2.html)
 
 
 ## Third post
@@ -42,6 +48,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <img src="http://via.placeholder.com/350x150">
 
+[link 3](3.html)
+
 ## Fourth post
 
 This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -52,6 +60,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <img src="http://via.placeholder.com/350x150">
 
+[link 3](3.html)
 
 Carrousel {.carrousel}
 ======================
@@ -69,35 +78,19 @@ Lt. Corwin: Do we trust no-one then? Cmdr. Susan Ivanova: No, trust Ivanova, tru
 Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behindthe future. 
 
 
-#### Level 4
+Audio Boxes {.layout_col2}
+==========================
 
-Se ignora esto porque tiene nivel 4
-
-Delenn: We are star stuff. We are the universe made manifest trying to figure itself out. 
-
-Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we'd get better leadership and a little more concern for the future. 
-
-Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we'd get better leadership and a little more concern for the future. Kosh Naranek: Understanding is a three-edged sword. Alfred Bester: Much as it might offend their sense of perspective, not everything is about Babylon 5.
-
-
-Audio Boxes {.boxes}
-====================
-
-## First Audio
+## Left side
 
 This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+
+
+## Right Side
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
-## Second Audio
-
-This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-
-## Third Audio
-
-This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 

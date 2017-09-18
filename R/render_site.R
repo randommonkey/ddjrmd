@@ -6,6 +6,8 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
   if (is.null(config))
     stop("No site configuration (_site.yml) file found.")
 
+  dots <- list(...)
+  self_contained <- (dots$self_contained %||% config$self_contained) %||% FALSE
 
   # helper function to get all input files. includes all .Rmd and
   # .md files that don't start with "_" (note that we don't do this
@@ -35,6 +37,16 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
     else {
       files <- file.path(input, input_files())
     }
+
+    dep_site <- htmltools::htmlDependency("site", "0.1",
+                                          src = system.file("rmarkdown", "site",
+                                                            package = "ddjrmd"),
+                                          stylesheet=c("hamburgers.min.css", "site.css"),
+                                          script = c("site.js","handlebars.min.js"),
+                                          all_files = FALSE)
+    extra_dependencies <- list(dep_site)
+
+
 
     # Add args
     args <- pandoc_metadata_arg("logo",config$logo)
@@ -81,13 +93,15 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
                           output_format = output_format,
                           #params = params,
                           output_options = list(lib_dir = "assets",
-                                                self_contained = FALSE,
+                                                self_contained = self_contained,
                                                 #pandoc_args = c("--metadata","debug=TRUE"),
                                                 pandoc_args = args,
                                                 includes = list(before_body = navbar_tempfile,
                                                                 after_body = c(
                                                                   see_also_tempfile,
-                                                                  footer_tempfile))),
+                                                                  footer_tempfile)),
+                                                extra_dependencies = extra_dependencies
+                                                ),
                           envir = envir,
                           quiet = quiet,
                           encoding = encoding)

@@ -1,86 +1,38 @@
-/*INDEX*/
-html,
+html, 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-}
-#homepage::-webkit-scrollbar {
-  display: none;
-}
-#wrapper {
-  position: relative;
-  height: 100%;
 }
 header {
-  width: 100%;
-  height: 30%;
+  height: 70%;
+  overflow: hidden;
   position: relative;
-}
-@media (max-width: 768px) {
-  header {
-    background: url('../../videos/clip.gif') no-repeat center center fixed !important;
-    background-size: cover !important;
-  }
-}
-main {
-  background: #ffffff;
-}
-footer {
-  background: #5f7c8a;
+  width: 100%;
 }
 .header-content {
-  position: relative;
-  top: 50%;
   left: 50%;
+  position: absolute;
+  top: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  padding: 0 15px;
 }
-.header-content .header-inner {
-  width: 95%;
-  margin: 0 auto;
-}
-.header-content .header-inner h1 {
-  margin-top: 0;
-  color: #fff;
-  text-shadow: 2px 0 0 #2a2a2a, -2px 0 0 #2a2a2a, 0 2px 0 #2a2a2a, 0 -2px 0 #2a2a2a, 1px 1px #2a2a2a, -1px -1px 0 #2a2a2a, 1px -1px 0 #2a2a2a, -1px 1px 0 #2a2a2a;
-  font-size: 50px;
-}
-.header-content .header-inner p {
-  color: #f4f4f4;
-  text-shadow: 1px 0 0 #2a2a2a, -1px 0 0 #2a2a2a, 0 1px 0 #2a2a2a, 0 -1px 0 #2a2a2a, 1px 1px #2a2a2a, -1px -1px 0 #2a2a2a, 1px -1px 0 #2a2a2a, -1px 1px 0 #2a2a2a;
-  font-size: 18px;
-  text-align: center;
-}
-.topnav {
-  background: transparent;
-  height: 50px;
-  top: 0;
-  left: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  margin-bottom: 20px;
-}
+
+
 .topnav.affix {
   background: rgba(100,100,100,0.4);
-  border-bottom: 1px solid rgba(200,200,200,0.8)
+  border-bottom: 1px solid rgba(200,200,200,0.8);
 }
-.topnav .container-fluid {
-  height: 100%;
-}
+.topnav .container-fluid,
 .topnav .special-wrapper {
   height: 100%;
 }
 .topnav .special-wrapper .hamburger {
   padding: 0;
+  padding: 4px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  border: 4px solid #ffffff;
-  padding: 4px;
 }
 .topnav .special-wrapper .hamburger:focus,
 .topnav .special-wrapper .hamburger:active {
@@ -91,29 +43,32 @@ footer {
 .topnav .special-wrapper .hamburger span.hamburger-inner:before {
   background: #f4f4f6;
 }
-.topnav .special-wrapper .special-title {
-  display: none;
-  margin-left: 10px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #ffffff;
-}
 .topnav .special-wrapper img {
-  height: 100%;
-  float: right;
-  padding: 15px;
-  padding-right: 0px;
   filter: brightness(0) invert(1);
+  float: right;
+  height: 100%;
+  padding-right: 0px;
+  padding: 15px;
 }
+.topnav .special-wrapper img.ds {
+  filter: brightness(0) invert(1);
+  float: right;
+  height: 100%;
+  padding-right: 0px;
+  padding: 15px;
+}
+.topnav .special-wrapper img.logo {
+  height: 50px;
+}
+
+
 .full-menu {
-  position: absolute;
-  width: 100%;
-  height: 0vh;
   background: rgba(10,10,10,0.95);
+  height: 0vh;
   overflow: hidden;
+  position: absolute;
   transition: all 0.3s linear;
+  width: 100%;
 }
 .full-menu.open {
   height: 100vh;
@@ -121,8 +76,8 @@ footer {
 .full-menu ul {
   margin: 0;
   padding: 0;
-  text-align: center;
   position: relative;
+  text-align: center;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -131,25 +86,21 @@ footer {
 }
 .full-menu ul li a {
   color: #ffffff;
+  font-size: 16px;
   text-decoration: none;
-  font-size: 35px;
 }
 
-.footer-container {
+
+footer {
+  background: #133d3b;
+}
+footer .footer-container {
   max-width: 70%;
   margin: 0 auto;
   padding: 15px 0;
 }
-.footer-container p {
-  color: #fff;
+footer .footer-container p {
+  color: #ffffff;
   text-align: justify;
   font-size: 15px;
-}
-.footer-container p a {
-  color: white;
-  transition: all 0.5s linear;
-}
-.footer-container p a:hover {
-  font-weight: bold;
-  text-decoration: none;
 }

@@ -1,3 +1,7 @@
+/* ScrollReveal */
+window.sr = ScrollReveal();
+sr.reveal('.story-box', { duration: 1800 }, 300);
+
 $(document).ready(function() {
 
     $('.hamburger').click(function() {
@@ -14,18 +18,16 @@ $(document).ready(function() {
     /* Center images */
     $('img').css({ 'margin-left': 'auto', 'margin-right': 'auto' });
 
-    /* Main container */
-    var main = document.createElement('main');
-    $('header').after(main);
+    // /* Main container */
+    // var main = document.createElement('main');
+    // $('header').after(main);
+    var main = $('main');
 
     /* Intro container */
-    var intro = document.createElement('div');
-    $(intro).addClass('intro').addClass('container');
-    $(main).prepend(intro);
-
-    /* Find first <p> tag and place it into intro container */
-    var introText = $(main).nextAll('p')[0];
-    $(intro).prepend(introText);
+    var introText = $("main").find("p:first");
+    // $("main").find("p:first").remove();
+    console.log("Intro text",introText)
+    $("#intro").append(introText);
 
     // Handle sections
     var sections = $('.section.level1').map(function() {
@@ -96,7 +98,5 @@ $(document).ready(function() {
     })
 
 
-    /* ScrollReveal */
-    window.sr = ScrollReveal();
-    sr.reveal('.story-box', { duration: 1800 }, 300);
+
 })
