@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="pandoc" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Árboles de Bogotá" />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+	<title>Árboles de Bogotá</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.1/hamburgers.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora" rel="stylesheet">
+	<title>Árboles de Bogotá</title>
+	<!-- Page style -->
+	<style>
+		html, 
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+		header {
+  		height: 70%;
+  		overflow: hidden;
+  		position: relative;
+  		width: 100%;
+		}
+		.header-content {
+  		left: 50%;
+  		position: absolute;
+  		top: 50%;
+  		transform: translate(-50%, -50%);
+		}
+		.topnav {
+		  background: #133d3b;
+		  height: 50px;
+		  top: 0;
+		  left: 0;
+		  position: fixed;
+		  width: 100%;
+		  z-index: 10;
+		  margin-bottom: 20px;
+		}
+		.topnav.affix {
+  		background: rgba(100,100,100,0.4);
+  		border-bottom: 1px solid rgba(200,200,200,0.8);
+		}
+		.topnav .container-fluid,
+		.topnav .special-wrapper {
+  		height: 100%;
+		}
+		.topnav .special-wrapper .hamburger {
+		  padding: 0;
+		  padding: 4px;
+		  position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+		}
+		.topnav .special-wrapper .hamburger:focus,
+		.topnav .special-wrapper .hamburger:active {
+  		outline: none;
+		}
+		.topnav .special-wrapper .hamburger span.hamburger-inner,
+		.topnav .special-wrapper .hamburger span.hamburger-inner:after,
+		.topnav .special-wrapper .hamburger span.hamburger-inner:before {
+  		background: #f4f4f6;
+		}
+		.topnav .special-wrapper img.ds {
+  		filter: brightness(0) invert(1);
+  		float: right;
+  		height: 100%;
+  		padding-right: 0px;
+  		padding: 15px;
+		}
+    .topnav .special-wrapper img.logo {
+      height: 50px;
+    }
+		.full-menu {
+		  background: rgba(10,10,10,0.95);
+		  height: 0vh;
+		  overflow: hidden;
+		  position: absolute;
+		  transition: all 0.3s linear;
+		  width: 100%;
+		}
+		.full-menu.open {
+		  height: 100vh;
+		}
+		.full-menu ul {
+		  margin: 0;
+		  padding: 0;
+		  position: relative;
+		  text-align: center;
+		  top: 50%;
+		  transform: translateY(-50%);
+		}
+		.full-menu ul li {
+		  margin: 10px 0;
+		}
+		.full-menu ul li a {
+		  color: #ffffff;
+		  font-size: 16px;
+		  text-decoration: none;
+		}
+    main {
+      padding-top: 50px;
+    }
+    main .tree-info {
+    	padding: 40px 0;
+    }
+    main .tree-info:nth-child(odd) {
+    	background: #ffffe3
+    }
+    main .tree-info .tree-name {
+    	color: #133d3b;
+			font-family: 'Oswald', sans-serif;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+    }
+    main .tree-info .tree-description {
+    	font-family: 'Open Sans', sans-serif;
+    	font-size: 13px;
+    	margin-bottom: 15px;
+    }
+    main .tree-info img {
+    	margin: 0 auto;
+    }
+		footer {
+			background: #133d3b;
+		}
+		footer .footer-container {
+			max-width: 70%;
+			margin: 0 auto;
+			padding: 15px 0;
+		}
+		footer .footer-container p {
+			color: #ffffff;
+			text-align: justify;
+			font-size: 15px;
+		}
+		/* Media Queries */
+		@media screen and (min-width: 768px) {
+			.full-menu ul li a { font-size: 23px; }
+	  	.post-margin { 
+	    	font-size: 18px;
+	    	width: 75%;
+	  	}
+		}
+		@media screen and (min-width: 992px) {
+			.full-menu ul li a { font-size: 28px; }
+	  	.post-margin { 
+		    font-size: 18px;
+	    	width: 55%;
+	  	}
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<nav class="topnav">
+				<div class="full-menu">
+					<ul>
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="./realidad.html">La realidad de los árboles bogotanos</a></li>
+						<li><a href="./recorrido.html">Recorrido de los árboles icónicos</a></li>
+						<li><a href="./narraciones.html">Narraciones</a></li>
+						<li><a href="./raices.html">Las raíces de los árboles</a></li>
+						<li><a href="./frutos.html">Los frutos</a></li>
+						<li><a href="./explora.html">Explora todos los árboles</a></li>
+						<li><a href="./faq.html">Preguntas Frecuentes sobre los árboles</a></li>
+					</ul>
+				</div>
+				<div class="container-fluid">
+					<div class="special-wrapper">
+						<button class="hamburger hamburger--spin" type="button">
+							<span class="hamburger-box">
+								<span class="hamburger-inner"></span>
+							</span>
+						</button>
+            <img src="assets/images/logo-especial.png" alt="" class="logo">
+            <img src="assets/images/ds.png" alt="datasketch" class="ds">
+					</div>
+				</div>
+			</nav>
+    </header>
+    <main>
+    	<section class="tree-info">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-4 col-md-offset-2 col-sm-7 col-xs-12">
+    					<h2 class="tree-name">Eucalipto</h2>
+    					<p class="tree-description"><strong>Nombre: </strong> Eucalipto</p>
+    					<p class="tree-description"><strong>Nombre Científico: </strong> Eucalyptus cinerea</p>
+    					<p class="tree-description"><strong>Familia: </strong> Myrtaceae</p>
+    					<p class="tree-description"><strong>Está amenazada: </strong> No se la considera una especie amenazada</p>
+    					<p class="tree-description"><strong>Características: </strong> Las ramitas son usadas para hacer arreglos florales. Árbol muy ornamental por el color de su follaje, es apropiado para ser plantado en parques, jardines y avenidas</p>
+    					<p class="tree-description"><strong>Dónde está: </strong> Nativo de una reducida área del sureste de Australia, introducido en otras partes del mundo. En Colombia cultivado en algunas regiones de clima frío</p>
+    				</div>
+    				<div class="col-md-4 col-sm-5 col-xs-12 col-md-offset-1">
+    					<img src="http://via.placeholder.com/225x400" alt="" class="img-responsive">
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<section class="tree-info">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-4 col-md-offset-2 col-sm-7 col-xs-12">
+    					<h2 class="tree-name">Eucalipto</h2>
+    					<p class="tree-description"><strong>Nombre: </strong> Eucalipto</p>
+    					<p class="tree-description"><strong>Nombre Científico: </strong> Eucalyptus cinerea</p>
+    					<p class="tree-description"><strong>Familia: </strong> Myrtaceae</p>
+    					<p class="tree-description"><strong>Está amenazada: </strong> No se la considera una especie amenazada</p>
+    					<p class="tree-description"><strong>Características: </strong> Las ramitas son usadas para hacer arreglos florales. Árbol muy ornamental por el color de su follaje, es apropiado para ser plantado en parques, jardines y avenidas</p>
+    					<p class="tree-description"><strong>Dónde está: </strong> Nativo de una reducida área del sureste de Australia, introducido en otras partes del mundo. En Colombia cultivado en algunas regiones de clima frío</p>
+    				</div>
+    				<div class="col-md-4 col-sm-5 col-xs-12 col-md-offset-1">
+    					<img src="http://via.placeholder.com/225x400" alt="" class="img-responsive">
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<section class="tree-info">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-4 col-md-offset-2 col-sm-7 col-xs-12">
+    					<h2 class="tree-name">Eucalipto</h2>
+    					<p class="tree-description"><strong>Nombre: </strong> Eucalipto</p>
+    					<p class="tree-description"><strong>Nombre Científico: </strong> Eucalyptus cinerea</p>
+    					<p class="tree-description"><strong>Familia: </strong> Myrtaceae</p>
+    					<p class="tree-description"><strong>Está amenazada: </strong> No se la considera una especie amenazada</p>
+    					<p class="tree-description"><strong>Características: </strong> Las ramitas son usadas para hacer arreglos florales. Árbol muy ornamental por el color de su follaje, es apropiado para ser plantado en parques, jardines y avenidas</p>
+    					<p class="tree-description"><strong>Dónde está: </strong> Nativo de una reducida área del sureste de Australia, introducido en otras partes del mundo. En Colombia cultivado en algunas regiones de clima frío</p>
+    				</div>
+    				<div class="col-md-4 col-sm-5 col-xs-12 col-md-offset-1">
+    					<img src="http://via.placeholder.com/225x400" alt="" class="img-responsive">
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt non quidem dicta ex sequi beatae voluptas maxime consequuntur, ea maiores officia sapiente minus accusantium. Vitae ipsum beatae corrupti, laborum hic.</p>
+      </div>
+    </footer>
+  </div>
+  <!-- Page script -->
+	<script>
+    $(document).ready(function () {
+      $('.hamburger').click(function() {
+        $(this).toggleClass('is-active')
+        $('.full-menu').toggleClass('open')
+        $('.topnav').toggleClass('open')
+      });
+      $('.topnav').affix({ offset: { top: 100 } });
+    });
+  </script>
+</body>
+</html>

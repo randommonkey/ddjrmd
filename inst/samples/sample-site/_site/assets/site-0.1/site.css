@@ -43,13 +43,13 @@ header {
 .topnav .special-wrapper .hamburger span.hamburger-inner:before {
   background: #f4f4f6;
 }
-.topnav .special-wrapper img {
+/*.topnav .special-wrapper img {
   filter: brightness(0) invert(1);
   float: right;
   height: 100%;
   padding-right: 0px;
   padding: 15px;
-}
+}*/
 .topnav .special-wrapper img.ds {
   filter: brightness(0) invert(1);
   float: right;
@@ -90,6 +90,22 @@ header {
   text-decoration: none;
 }
 
+main {
+      padding-top: 70px;
+    }
+
+
+.apps-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.apps-box .app {
+  width: 100%;
+}
+
+#seealsoContent{
+  background-color: #f0fffe;
+}
 
 footer {
   background: #133d3b;
@@ -104,3 +120,4 @@ footer .footer-container p {
   text-align: justify;
   font-size: 15px;
 }
+

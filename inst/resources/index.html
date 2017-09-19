@@ -1,503 +1,468 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="pandoc" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="Árboles de Bogotá" />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-    <title>Árboles de Bogotá</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.1/hamburgers.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora" rel="stylesheet">
-    <title>Árboles de Bogotá</title>
-    <!-- Page style -->
-    <style>
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="pandoc" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Árboles de Bogotá" />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+	<title>Árboles de Bogotá</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
 
-    #homepage::-webkit-scrollbar {
-        display: none;
-    }
-
-    #wrapper {
-        position: relative;
-        height: 100%;
-    }
-
-    header {
-        height: 70%;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-    }
-
-    .header-content {
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .topnav {
-        background: transparent;
-        height: 50px;
-        top: 0;
-        left: 0;
-        position: fixed;
-        width: 100%;
-        z-index: 10;
-        margin-bottom: 20px;
-    }
-
-    .topnav.affix {
-        background: rgba(100, 100, 100, 0.4);
-        border-bottom: 1px solid rgba(200, 200, 200, 0.8);
-    }
-
-    .topnav .container-fluid,
-    .topnav .special-wrapper {
-        height: 100%;
-    }
-
-    .topnav .special-wrapper .hamburger {
-        padding: 0;
-        padding: 4px;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .topnav .special-wrapper .hamburger:focus,
-    .topnav .special-wrapper .hamburger:active {
-        outline: none;
-    }
-
-    .topnav .special-wrapper .hamburger span.hamburger-inner,
-    .topnav .special-wrapper .hamburger span.hamburger-inner:after,
-    .topnav .special-wrapper .hamburger span.hamburger-inner:before {
-        background: #f4f4f6;
-    }
-
-    .topnav .special-wrapper img {
-        filter: brightness(0) invert(1);
-        float: right;
-        height: 100%;
-        padding-right: 0px;
-        padding: 15px;
-    }
-
-    .full-menu {
-        background: rgba(10, 10, 10, 0.95);
-        height: 0vh;
-        overflow: hidden;
-        position: absolute;
-        transition: all 0.3s linear;
-        width: 100%;
-    }
-
-    .full-menu.open {
-        height: 100vh;
-    }
-
-    .full-menu ul {
-        margin: 0;
-        padding: 0;
-        position: relative;
-        text-align: center;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .full-menu ul li {
-        margin: 10px 0;
-    }
-
-    .full-menu ul li a {
-        color: #ffffff;
-        font-size: 16px;
-        text-decoration: none;
-    }
-
-    video {
-        z-index: -1;
-        height: 100%;
-        left: 0;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-
-    main .intro.container {
-        color: #3c3c3b;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 30px;
-        text-align: justify;
-    }
-
-    main .intro.container p strong {
-        background: #a0a336;
-        font-weight: normal !important;
-    }
-
-    main .intro.container p i {
-        color: #a0a336;
-        display: block;
-        font-family: 'Oswald', sans-serif;
-        font-size: 30px;
-        font-style: normal !important;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    main .stories {
-        background: #a0a336;
-        padding-top: 40px;
-    }
-
-    main .stories .stories-box {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly !important;
-    }
-
-    main .stories .story-box {
-        margin-bottom: 40px;
-        position: relative;
-        width: 100%;
-    }
-
-    main .stories .story-box .story-box-image {
-        position: relative;
-    }
-
-    main .stories .story-box .story-box-image:before {
-        border: 5px solid #ffffff;
-        content: '';
-        height: 90%;
-        left: 15%;
-        position: absolute;
-        top: 5%;
-        width: 70%;
-    }
-
-    main .stories .story-box .story-box-image img {
-        margin: 0 auto;
-        transition: all 0.5s linear;
-    }
-
-    main .stories .story-box .story-box-title {
-        color: #ffffff;
-        font-family: 'Oswald', sans-serif;
-        left: 0;
-        margin: 0;
-        position: absolute;
-        text-align: center;
-        text-transform: uppercase;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-    }
-
-    .carousel-inner {
-        background: #fff9e6;
-    }
-
-    .carousel .item {
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        -webkit-background-size: cover;
-        background-size: cover;
-        background: no-repeat center center scroll;
-        min-height: 300px;
-        height: 60vh;
-    }
-
-    .carousel .item .container {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .carousel-inner .item .container h2 {
-        font-family: 'Oswald', sans-serif;
-        text-transform: uppercase;
-    }
-
-    .left.carousel-control,
-    .right.carousel-control {
-        background: transparent;
-    }
-
-    .apps-box {
-        display: flex;
-    }
-
-    .apps-box .app {
-        width: 100%;
-    }
-
-    footer {
-        background: #133d3b;
-    }
-
-    footer .footer-container {
-        max-width: 70%;
-        margin: 0 auto;
-        padding: 15px 0;
-    }
-
-    footer .footer-container p {
-        color: #ffffff;
-        text-align: justify;
-        font-size: 15px;
-    }
-    /* Media Queries */
-
-    @media screen and (max-width: 768px) {
-        header {
-            background: url('assets/videos/clip.gif') no-repeat center center fixed !important;
-            background-size: cover !important;
-        }
-    }
-
-    @media screen and (min-width: 768px) {
-        header {
-            height: 50%;
-        }
-        .full-menu ul li a {
-            font-size: 23px;
-        }
-        main .stories .story-box {
-            width: 50%;
-        }
-        .apps-box .app {
-            width: 50%;
-        }
-    }
-
-    @media screen and (min-width: 992px) {
-        main .intro.container {
-            font-size: 30px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 70%
-        }
-        main .intro.container p i {
-            font-size: 50px;
-        }
-        .full-menu ul li a {
-            font-size: 28px;
-        }
-        main .stories .story-box {
-            width: 33.33%;
-        }
-    }
-    </style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.1/hamburgers.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora" rel="stylesheet">
+	<title>Árboles de Bogotá</title>
+	<!-- Page style -->
+	<style>
+		html, 
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+		#homepage::-webkit-scrollbar {
+  		display: none;
+		}
+		#wrapper {
+  		position: relative;
+  		height: 100%;
+		}
+		header {
+  		height: 70%;
+  		overflow: hidden;
+  		position: relative;
+  		width: 100%;
+		}
+		.header-content {
+  		left: 50%;
+  		position: absolute;
+  		top: 50%;
+  		transform: translate(-50%, -50%);
+		}
+		.topnav {
+		  background: transparent;
+		  height: 50px;
+		  top: 0;
+		  left: 0;
+		  position: fixed;
+		  width: 100%;
+		  z-index: 10;
+		  margin-bottom: 20px;
+		}
+		.topnav.affix {
+  		background: rgba(100,100,100,0.4);
+  		border-bottom: 1px solid rgba(200,200,200,0.8);
+		}
+		.topnav .container-fluid,
+		.topnav .special-wrapper {
+  		height: 100%;
+		}
+		.topnav .special-wrapper .hamburger {
+		  padding: 0;
+		  padding: 4px;
+		  position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+		}
+		.topnav .special-wrapper .hamburger:focus,
+		.topnav .special-wrapper .hamburger:active {
+  		outline: none;
+		}
+		.topnav .special-wrapper .hamburger span.hamburger-inner,
+		.topnav .special-wrapper .hamburger span.hamburger-inner:after,
+		.topnav .special-wrapper .hamburger span.hamburger-inner:before {
+  		background: #f4f4f6;
+		}
+		.topnav .special-wrapper img {
+  		filter: brightness(0) invert(1);
+  		float: right;
+  		height: 100%;
+  		padding-right: 0px;
+  		padding: 15px;
+		}
+		.full-menu {
+		  background: rgba(10,10,10,0.95);
+		  height: 0vh;
+		  overflow: hidden;
+		  position: absolute;
+		  transition: all 0.3s linear;
+		  width: 100%;
+		}
+		.full-menu.open {
+		  height: 100vh;
+		}
+		.full-menu ul {
+		  margin: 0;
+		  padding: 0;
+		  position: relative;
+		  text-align: center;
+		  top: 50%;
+		  transform: translateY(-50%);
+		}
+		.full-menu ul li {
+		  margin: 10px 0;
+		}
+		.full-menu ul li a {
+		  color: #ffffff;
+		  font-size: 16px;
+		  text-decoration: none;
+		}
+		video {
+ 		 	z-index: -1;
+  		height: 100%;
+  		left: 0;
+  		object-fit: cover;
+  		position: absolute;
+  		top: 0;
+  		width: 100%;
+		}
+		main .intro.container {
+		  color: #3c3c3b;
+		  font-family: 'Open Sans', sans-serif;
+		  font-size: 20px;
+		  margin-left: auto;
+		  margin-right: auto;
+		  padding-top: 30px;
+		  text-align: justify;
+		}
+		main .intro.container p strong {
+		  background: #a0a336;
+		  font-weight: normal !important;
+		}
+		main .intro.container p i {
+			color: #a0a336;
+		  display: block;
+		  font-family: 'Oswald', sans-serif;
+		  font-size: 30px;
+		  font-style: normal !important;
+		  margin-bottom: 10px;
+		  margin-top: 10px;
+		  text-align: center;
+		  text-transform: uppercase;
+		}
+		main .stories {
+			background: #a0a336;
+			padding-top: 40px;
+		}
+		main .stories .stories-box {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly !important;
+		}
+		main .stories .story-box {
+			margin-bottom: 40px;
+			position: relative;
+			width: 100%;
+		}
+		main .stories .story-box .story-box-image {
+			position: relative;
+		}
+		main .stories .story-box .story-box-image:before {
+			border: 5px solid #ffffff;
+			content: '';
+			height: 90%;
+			left: 15%;
+			position: absolute;
+			top: 5%;
+			width: 70%;
+		}
+		main .stories .story-box .story-box-image img {
+			margin: 0 auto;
+			transition: all 0.5s linear;
+		}
+		main .stories .story-box .story-box-title {
+			color: #ffffff;
+			font-family: 'Oswald', sans-serif;
+			left: 0;
+			margin: 0;
+			position: absolute;
+			text-align: center;
+			text-transform: uppercase;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+		}
+		.carousel-inner {
+			background: #fff9e6;
+		}
+		.carousel .item {
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  -webkit-background-size: cover;
+		  background-size: cover;
+		  background: no-repeat center center scroll;
+		  min-height: 300px;
+  		height: 60vh;
+		}
+		.carousel .item .container {
+			padding-top: 80px;
+   		position: relative;
+ 			top: 50%;
+   		transform: translateY(-50%);
+ 		}
+ 		.carousel-inner .item .container h2 {
+ 			color: #133d3b;
+			font-family: 'Oswald', sans-serif;
+ 			text-transform: uppercase;
+ 		}
+ 		.carousel-inner .item .container h2 i {
+ 			color: #c46b3b;
+ 			font-style: normal !important;
+ 		}
+		.left.carousel-control,
+ 		.right.carousel-control {
+   		background: transparent;
+ 		}
+ 		.apps-box {
+ 			display: flex;
+ 			flex-wrap: wrap;
+ 		}
+ 		.apps-box .app {
+ 			width: 100%;
+ 		}
+		footer {
+			background: #133d3b;
+		}
+		footer .footer-container {
+  		max-width: 70%;
+  		margin: 0 auto;
+  		padding: 15px 0;
+		}
+		footer .footer-container p {
+  		color: #ffffff;
+  		text-align: justify;
+  		font-size: 15px;
+		}
+		/* Media Queries */
+		@media screen and (max-width: 768px) {
+			header {
+				background: url('assets/videos/clip.gif') no-repeat center center fixed !important;
+    		background-size: cover !important;
+			}
+		}
+		@media screen and (min-width: 768px) {
+			header { height: 50%; }
+			.full-menu ul li a { font-size: 23px; }
+			main .stories .story-box { width: 50%; }
+			.apps-box .app {
+ 				width: 50%;
+ 			}
+ 			.carousel .item .container {
+ 				padding-top: 0;
+ 			}
+ 			.carousel-inner .item .container h2 {
+ 				margin-bottom: 30px;
+ 				padding-right: 100px;
+ 			}
+		}
+		@media screen and (min-width: 992px) {
+			main .intro.container { 
+				font-size: 30px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 70%
+			}
+			main .intro.container p i { font-size: 50px; }
+			.full-menu ul li a { font-size: 28px; }
+			main .stories .story-box { width: 33.33%; }
+			.carousel-inner .item .container h2 {
+				margin-bottom: 50px;
+ 				padding-right: 250px;
+ 			}
+		}
+	</style>
 </head>
-
 <body id="homepage">
-    <div id="wrapper">
-        <header>
-            <nav class="topnav">
-                <div class="full-menu">
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./realidad.html">La realidad de los árboles bogotanos</a></li>
-                        <li><a href="./recorrido.html">Recorrido de los árboles icónicos</a></li>
-                        <li><a href="./narraciones.html">Narraciones</a></li>
-                        <li><a href="./raices.html">Las raíces de los árboles</a></li>
-                        <li><a href="./frutos.html">Los frutos</a></li>
-                        <li><a href="./explora.html">Explora todos los árboles</a></li>
-                        <li><a href="./faq.html">Preguntas Frecuentes sobre los árboles</a></li>
-                    </ul>
-                </div>
-                <div class="container-fluid">
-                    <div class="special-wrapper">
-                        <button class="hamburger hamburger--spin" type="button">
-                            <span class="hamburger-box">
+	<div id="wrapper">
+		<header>
+			<nav class="topnav">
+				<div class="full-menu">
+					<ul>
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="./realidad.html">La realidad de los árboles bogotanos</a></li>
+						<li><a href="./recorrido.html">Recorrido de los árboles icónicos</a></li>
+						<li><a href="./narraciones.html">Narraciones</a></li>
+						<li><a href="./raices.html">Las raíces de los árboles</a></li>
+						<li><a href="./frutos.html">Los frutos</a></li>
+						<li><a href="./explora.html">Explora todos los árboles</a></li>
+						<li><a href="./faq.html">Preguntas Frecuentes sobre los árboles</a></li>
+					</ul>
+				</div>
+				<div class="container-fluid">
+					<div class="special-wrapper">
+						<button class="hamburger hamburger--spin" type="button">
+							<span class="hamburger-box">
 								<span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                        <img src="assets/images/ds.png" alt="datasketch">
-                    </div>
-                </div>
-            </nav>
-            <video autoplay loop>
-                <source src="assets/videos/clip.mp4" type="video/mp4">
-            </video>
-            <div class="header-content">
-                <div class="header-inner">
-                    <img src="assets/images/logo-especial.png" alt="logo-especial-arboles">
-                </div>
-            </div>
-        </header>
-        <main>
-            <div class="intro container">
-                <p>En Bogotá hay <strong>1.2 millones de árboles públicos</strong> sembrados en vías, parques, rondas de ríos y aceras. Sin importar su tamaño o especie, <strong>no son suficientes para mitigar la huella ambiental</strong> de la ciudad ni para garantizar el bienestar de los bogotanos. <i>¿QUÉ HACER?</i></p>
-            </div>
-            <div class="stories">
-                <div class="container">
-                    <div class="stories-box">
-                        <div class="story-box">
-                            <a href="./post.html">
-                                <div class="story-box-image">
-                                    <h2 class="story-box-title">Título</h2>
-                                    <img src="assets/images/img-1.png" alt="" class="img-responsive">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="story-box">
-                            <a href="./post.html">
-                                <div class="story-box-image">
-                                    <h2 class="story-box-title">Título</h2>
-                                    <img src="assets/images/img-2.png" alt="" class="img-responsive">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="story-box">
-                            <a href="./post.html">
-                                <div class="story-box-image">
-                                    <h2 class="story-box-title">Título</h2>
-                                    <img src="assets/images/img-3.png" alt="" class="img-responsive">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="story-box">
-                            <a href="./post.html">
-                                <div class="story-box-image">
-                                    <h2 class="story-box-title">Título</h2>
-                                    <img src="assets/images/img-1.png" alt="" class="img-responsive">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="story-box">
-                            <a href="./post.html">
-                                <div class="story-box-image">
-                                    <h2 class="story-box-title">Título</h2>
-                                    <img src="assets/images/img-2.png" alt="" class="img-responsive">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="story-box">
-                            <a href="./post.html">
-                                <div class="story-box-image">
-                                    <h2 class="story-box-title">Título</h2>
-                                    <img src="assets/images/img-3.png" alt="" class="img-responsive">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel slide" data-ride="carousel" id="tree-slides">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-slide-to="0" data-target="#tree-slides" class="active"></li>
-                    <li data-slide-to="1" data-target="#tree-slides"></li>
-                    <li data-slide-to="2" data-target="#tree-slides"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
-                                </div>
-                                <div class="col-sm-6">
-                                    <h2>Conoce árboles icónicos de bogotá</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi consequatur ut fugit ea, eveniet, obcaecati praesentium voluptatem labore mollitia id.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
-                                </div>
-                                <div class="col-sm-6">
-                                    <h2>Conoce árboles icónicos de bogotá</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi consequatur ut fugit ea, eveniet, obcaecati praesentium voluptatem labore mollitia id.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
-                                </div>
-                                <div class="col-sm-6">
-                                    <h2>Conoce árboles icónicos de bogotá</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi consequatur ut fugit ea, eveniet, obcaecati praesentium voluptatem labore mollitia id.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#tree-slides" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#tree-slides" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                   <span class="sr-only">Next</span>
-                </a>
-            </div>
-            <div class="apps-box">
-                <div class="app">
-                    <h1>Gif goes here</h1>
-                </div>
-                <div class="app">
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <div class="footer-container">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt non quidem dicta ex sequi beatae voluptas maxime consequuntur, ea maiores officia sapiente minus accusantium. Vitae ipsum beatae corrupti, laborum hic.</p>
-            </div>
-        </footer>
-    </div>
-    <!-- Page script -->
-    <script>
-    $(document).ready(function() {
-        $('.hamburger').click(function() {
-            $(this).toggleClass('is-active')
-            $('.full-menu').toggleClass('open')
-            $('.topnav').toggleClass('open')
-        });
-        $('.topnav').affix({ offset: { top: 100 } });
-        /* ScrollReveal */
-        window.sr = ScrollReveal();
-        sr.reveal('.story-box', { duration: 1800 }, 300);
-    });
-    </script>
-</body>
+							</span>
+						</button>
+						<img src="assets/images/ds.png" alt="datasketch">
+					</div>
+				</div>
+			</nav>
+			<video autoplay loop>
+				<source src="assets/videos/clip.mp4" type="video/mp4">
+			</video>
+			<div class="header-content">
+				<div class="header-inner">
+					<img src="assets/images/logo-especial.png" alt="logo-especial-arboles">
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="intro container">
+				<p>En Bogotá hay <strong>1.2 millones de árboles públicos</strong> sembrados en vías, parques, rondas de ríos y aceras. Sin importar su tamaño o especie, <strong>no son suficientes para mitigar la huella ambiental</strong> de la ciudad ni para garantizar el bienestar de los bogotanos. <i>¿QUÉ HACER?</i></p>
+			</div>
+			<div class="stories">
+				<div class="container">
+					<div class="stories-box">
+						<div class="story-box">
+							<a href="./post.html">
+								<div class="story-box-image">
+									<h2 class="story-box-title">Título</h2>
+									<img src="assets/images/img-1.png" alt="" class="img-responsive">	
+								</div>
+							</a>
+						</div>
+						<div class="story-box">
+							<a href="./post.html">
+								<div class="story-box-image">
+									<h2 class="story-box-title">Título</h2>
+									<img src="assets/images/img-2.png" alt="" class="img-responsive">	
+								</div>
+							</a>
+						</div>
+						<div class="story-box">
+							<a href="./recorrido.html">
+								<div class="story-box-image">
+									<h2 class="story-box-title">Recorrido</h2>
+									<img src="assets/images/img-3.png" alt="" class="img-responsive">	
+								</div>
+							</a>
+						</div>
+						<div class="story-box">
+							<a href="./catalogo.html">
+								<div class="story-box-image">
+									<h2 class="story-box-title">Catálogo</h2>
+									<img src="assets/images/img-5.png" alt="" class="img-responsive">	
+								</div>
+							</a>
+						</div>
+						<div class="story-box">
+							<a href="./post.html">
+								<div class="story-box-image">
+									<h2 class="story-box-title">Título</h2>
+									<img src="assets/images/img-4_filter.png" alt="" class="img-responsive">	
+								</div>
+							</a>
+						</div>
+						<div class="story-box">
+							<a href="./post.html">
+								<div class="story-box-image">
+									<h2 class="story-box-title">Título</h2>
+									<img src="assets/images/img-6.png" alt="" class="img-responsive">	
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel slide" data-ride="carousel" id="tree-slides">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-slide-to="0" data-target="#tree-slides" class="active"></li>
+					<li data-slide-to="1" data-target="#tree-slides"></li>
+					<li data-slide-to="2" data-target="#tree-slides"></li>
+				</ol>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-6 col-xs-12">
+									<img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<h2>Conoce <i>árboles icónicos</i> de bogotá</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam odit, nulla eaque reprehenderit voluptates, quasi quam, distinctio dicta vero dolore rerum doloremque ratione libero explicabo culpa est deleniti eos optio.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-6 col-xs-12">
+									<img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<h2>Conoce <i>árboles icónicos</i> de bogotá</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui eius tenetur nobis eaque hic, molestias dolor neque, sit harum nam, ea illo sint dolorem beatae autem itaque. Amet, hic, alias.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-6 col-xs-12">
+									<img src="http://via.placeholder.com/720x405" alt="" class="img-responsive">
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<h2>Conoce <i>árboles icónicos</i> de bogotá</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur iure omnis dolores voluptatibus unde aspernatur dignissimos minus tempore commodi, labore laborum eius aliquam suscipit a assumenda molestiae ratione consectetur ipsam.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<!-- Controls -->
+      	<a class="left carousel-control" href="#tree-slides" role="button" data-slide="prev">
+      		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      		<span class="sr-only">Previous</span>
+      	</a>
+      	<a class="right carousel-control" href="#tree-slides" role="button" data-slide="next">
+      		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      		<span class="sr-only">Next</span>
+      	</a>
+			</div>
+			<div class="apps-box">
+				<div class="app">
+					<h1>Gif goes here</h1>
+				</div>
+				<div class="app">
+					<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+					<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+					<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/342030162&amp;color=4db665&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="footer-container">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt non quidem dicta ex sequi beatae voluptas maxime consequuntur, ea maiores officia sapiente minus accusantium. Vitae ipsum beatae corrupti, laborum hic.</p>
+			</div>
+		</footer>
+	</div>
+	<!-- Page script -->
+	<script>
+		$(document).ready(function () {
+			$('.hamburger').click(function() {
+        $(this).toggleClass('is-active')
+        $('.full-menu').toggleClass('open')
+        $('.topnav').toggleClass('open')
+    	});
+    	$('.topnav').affix({ offset: { top: 100 } });
+    	/* ScrollReveal */
+    	window.sr = ScrollReveal();
+    	sr.reveal('.story-box', { duration: 1800 }, 300);
+		});
+	</script>
+</body>
 </html>

@@ -34,8 +34,8 @@ $(document).ready(function() {
         var section = {}
         section.id = $(this).attr('id');
         section.type = $(this).attr('class').replace("section level1 ", "");
-        var $div = $("<div>", { id: "new-" + section.id, "class": section.type });
-        $("body").append($div);
+        // var $div = $("<div>", { id: "new-" + section.id, "class": section.type });
+        // $("body").append($div);
         // console.log($(this))
         if (section.type == "boxes") {
             // console.log("#" + section.id + '>.section.level2')
@@ -79,23 +79,46 @@ $(document).ready(function() {
                 return ({ title: title, link: link, img: img, paragraph: paragraph })
             })
         }
+        if (section.type == "layout-twocolumn"){
+            var twocolSection = $(".section.level1.layout-twocolumn");
+            var twocolSectionContent = $(twocolSection).find(".section.level2");
+            $(twocolSection).find(".section.level2").find("h2").remove();
+            var $div = $("<div>", {"class": "apps-box" });
+            $(twocolSection).addClass("app-box");
+            // $("#parsedContent").append($div);
+            twocolSectionContent.addClass("app");
+            $div.append(twocolSectionContent);
+                $('.section.level1').remove();
+
+            section.data = $div;
+        }
         return section
     });
     // Remove all parsed sections
     $('.section.level1').remove();
 
-    // console.log("SECTIONS", sections)
+    console.log("SECTIONS", sections)
 
     // Render templates
     sections.map(function(index, s) {
-        s.data = $.makeArray(s.data);
+
         if (s.type == "boxes") {
+            s.data = $.makeArray(s.data);
             $('#parsedContent').append(boxesTemplate(s));
         }
         if (s.type == "carrousel") {
+            s.data = $.makeArray(s.data);
             $('#parsedContent').append(carrouselTemplate(s));
         }
+        if (s.type == "layout-twocolumn") {
+            console.log("Two col div",s.data)
+            $('#parsedContent').append(s.data);
+        }
     })
+
+
+
+    // Handle layout-twocolumn
 
 
 

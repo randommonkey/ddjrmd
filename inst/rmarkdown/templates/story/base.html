@@ -11,13 +11,14 @@
 <title>$if(title)$$title$$endif$</title>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.1/hamburgers.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora" rel="stylesheet">
 
 
 $for(header-includes)$
@@ -53,48 +54,54 @@ $endfor$
 </head>
 
 <body>
+  <div id="wrapper">
+  <header>
+    <!-- init navbar -->
+    $for(include-before)$
+    $include-before$
+    $endfor$
+    <!-- end navbar -->
+  </header>
+  <main>
 
-<h1>$if(title)$$title$$endif$</h1>
+    <h1 class="post-title">$if(title)$$title$$endif$</h1>
+    <span class="post-date">$if(publishedDate)$Publicado $publishedDate$$endif$ $if(author)$$author$$endif$</span>
+    $if(image)$
+    <div class="post-cover-img" style="background-image: url($image$)"></div>
+    $endif$
 
-$for(include-before)$
-$include-before$
-$endfor$
+    $if(toc)$
+    <div id="$idprefix$TOC">
+    $toc$
+    </div>
+    $endif$
 
-$if(toc)$
-<div id="$idprefix$TOC">
-$toc$
+    $body$
+
+    $for(include-after)$
+    $include-after$
+    $endfor$
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+    </div>
+  </footer>
+
+  $if(mathjax-url)$
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "$mathjax-url$";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  $endif$
+
+
 </div>
-$endif$
-
-$if(debug)$
-<h1>DEBUG</h1>
-$endif$
-
-
-$body$
-
-$for(include-after)$
-$include-after$
-$endfor$
-
-<footer>
-  <div class="footer-container">
-  </div>
-</footer>
-
-$if(mathjax-url)$
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "$mathjax-url$";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-$endif$
-
-
-
 </body>
 </html>

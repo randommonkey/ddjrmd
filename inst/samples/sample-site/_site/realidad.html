@@ -11,13 +11,14 @@
 <title>TITLE</title>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.1/hamburgers.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora" rel="stylesheet">
 
 
 <link href="assets/site-0.1/hamburgers.min.css" rel="stylesheet" />
@@ -28,7 +29,12 @@
 <script src="assets/story-0.1/story.js"></script>
 
 <!--  -->
+<style type="text/css">
+  img{
+    max-width: 100%;
+  }
 
+</style>
 <!--  -->
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -36,121 +42,136 @@
 </head>
 
 <body>
-
-<h1>TITLE</h1>
-
-  <nav class="topnav topnav-post">
-    <div class="full-menu">
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-<li><a href="./realidad.html">La realidad de los árboles bogotanos</a></li>
-<li><a href="./recorrido.html">Recorrido</a></li>
-      </ul>
-    </div>
-    <div class="container-fluid">
-      <div class="special-wrapper">
-        <button class="hamburger hamburger--spin" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-        <!-- <span class="special-title">Árboles de Bogotá</span> -->
-        <img src="ds.png" alt="">
+  <div id="wrapper">
+  <header>
+    <!-- init navbar -->
+        <nav class="topnav">
+      <div class="full-menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+    <li><a href="./realidad.html">La realidad de los árboles bogotanos</a></li>
+    <li><a href="./recorrido.html">Recorrido</a></li>
+        </ul>
       </div>
+      <div class="container-fluid">
+        <div class="special-wrapper">
+          <button class="hamburger hamburger--spin" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          <img src="images/logo-especial.png" alt="" class="logo">
+          <img src="images/ds.png" alt="datasketch" class="ds">
+        </div>
+      </div>
+    </nav>
+        <!-- end navbar -->
+  </header>
+  <main>
+
+    <h1 class="post-title">TITLE</h1>
+    <span class="post-date">Publicado 2017-09-09 Datasketch</span>
+        <div class="post-cover-img" style="background-image: url(images/img-1.png)"></div>
+    
+    
+    <p>Este es un texto introductorio opcional.</p>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
+    <div id="first-post" class="section level2">
+    <h2>First post</h2>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+    <blockquote>
+    <p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </blockquote>
+    <div class="fullwidth">
+    <p><img src="http://via.placeholder.com/1350x150"></p>
     </div>
-  </nav>
+    </div>
+    <div id="second-post-is-a-figure" class="section level2">
+    <h2>Second post is a figure</h2>
+    <p>This is the abstract</p>
+    <p><img src="realidad_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+    </div>
+    <div id="third-post" class="section level2">
+    <h2>Third post</h2>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="fullwidth">
+    <p>This is a full width paragraph… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repr</p>
+    </div>
+    <p><img src="http://via.placeholder.com/350x150" /></p>
+    </div>
+    <div id="fourth-post" class="section level2">
+    <h2>Fourth post</h2>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p><img src="http://via.placeholder.com/950x350" /></p>
+    <div id="level-3" class="section level3">
+    <h3>Level 3</h3>
+    <p>Se ignora esto porque tiene nivel 3</p>
+    <p>Commander Jeffrey David Sinclair: Everyone lies, Michael. The innocent lie because they don’t want to be blamed for something they didn’t do and the guilty lie because they don’t have any other choice. Lt. Corwin: Do we trust no-one then? Cmdr. Susan Ivanova: No, trust Ivanova, trust yourself, anybody else, shoot’em. Susan Ivanova: If I live through this without completely losing my mind, it will be a miracle of Biblical proportions.</p>
+    <p>Lt. Corwin: [aside] Well, there goes my faith in the Almighty. [Opening narration, season 3] Susan Ivanova: The Babylon Project was our last, best hope for peace. It failed. But in the year of the Shadow War, it became something greater: our last, best hope for victory. The year is 2260. The place - Babylon 5. Alfred Bester: Being a telepath means you’re special and rare and valuable.</p>
+    <div id="level-4" class="section level4">
+    <h4>Level 4</h4>
+    <p>Se ignora esto porque tiene nivel 4</p>
+    <p>Delenn: We are star stuff. We are the universe made manifest trying to figure itself out.</p>
+    <p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
+    <p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future. Kosh Naranek: Understanding is a three-edged sword. Alfred Bester: Much as it might offend their sense of perspective, not everything is about Babylon 5.</p>
+    </div>
+    </div>
+    </div>
+    <div id="footer" class="section level2">
+    <h2>FOOTER</h2>
+    <p>Este sitio fue construido con ddjrmd. Toda la información sobre nosotros está disponible en <a href="http://datasketch.co" class="uri">http://datasketch.co</a> No olvide consultar el paso a paso.</p>
+    <p>Esta investigación se realizó con el apoyo de:</p>
+    <ul>
+    <li>Esta</li>
+    <li>Y esta otra</li>
+    </ul>
+    </div>
 
-
-
-
-<p>Este es un texto introductorio opcional.</p>
-<p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
-<div id="first-post" class="section level2">
-<h2>First post</h2>
-<p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p><img src="http://via.placeholder.com/350x150"></p>
-</div>
-<div id="second-post-is-a-figure" class="section level2">
-<h2>Second post is a figure</h2>
-<p>This is the abstract</p>
-<p><img src="realidad_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-</div>
-<div id="third-post" class="section level2">
-<h2>Third post</h2>
-<p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p><img src="http://via.placeholder.com/350x150"></p>
-</div>
-<div id="fourth-post" class="section level2">
-<h2>Fourth post</h2>
-<p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p><img src="http://via.placeholder.com/350x150"></p>
-<div id="level-3" class="section level3">
-<h3>Level 3</h3>
-<p>Se ignora esto porque tiene nivel 3</p>
-<p>Commander Jeffrey David Sinclair: Everyone lies, Michael. The innocent lie because they don’t want to be blamed for something they didn’t do and the guilty lie because they don’t have any other choice. Lt. Corwin: Do we trust no-one then? Cmdr. Susan Ivanova: No, trust Ivanova, trust yourself, anybody else, shoot’em. Susan Ivanova: If I live through this without completely losing my mind, it will be a miracle of Biblical proportions.</p>
-<p>Lt. Corwin: [aside] Well, there goes my faith in the Almighty. [Opening narration, season 3] Susan Ivanova: The Babylon Project was our last, best hope for peace. It failed. But in the year of the Shadow War, it became something greater: our last, best hope for victory. The year is 2260. The place - Babylon 5. Alfred Bester: Being a telepath means you’re special and rare and valuable.</p>
-<div id="level-4" class="section level4">
-<h4>Level 4</h4>
-<p>Se ignora esto porque tiene nivel 4</p>
-<p>Delenn: We are star stuff. We are the universe made manifest trying to figure itself out.</p>
-<p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
-<p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future. Kosh Naranek: Understanding is a three-edged sword. Alfred Bester: Much as it might offend their sense of perspective, not everything is about Babylon 5.</p>
-</div>
-</div>
-</div>
-<div id="footer" class="section level2">
-<h2>FOOTER</h2>
-<p>Este sitio fue construido con ddjrmd. Toda la información sobre nosotros está disponible en <a href="http://datasketch.co" class="uri">http://datasketch.co</a> No olvide consultar el paso a paso.</p>
-<p>Esta investigación se realizó con el apoyo de:</p>
-<ul>
-<li>Esta</li>
-<li>Y esta otra</li>
-</ul>
-</div>
-
-<script type="text/javascript">
- var seealsoData= {"title":"Ver también","links":[{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}]} ;
-</script> <script id="seealso-template" type="text/x-handlebars-template">
-    <div class="seealsoContainer">
-        <h2>{{title}}</h2>
-        {{#links}}
-        <div class="seealso">
+        <script type="text/javascript">
+     var seealsoData= {"title":"Ver también","links":[{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}]} ;
+    </script> <script id="seealso-template" type="text/x-handlebars-template">
+        <div class="seealsoContainer">
             <h2>{{title}}</h2>
-            <a href="{{link}}">link</a>
+            {{#links}}
+            <div class="seealso">
+                <h2>{{title}}</h2>
+                <a href="{{link}}">link</a>
+            </div>
+            {{/links}}
         </div>
-        {{/links}}
-    </div>
-</script>
-<script type="text/javascript">
-  var seealso = $("#seealso-template").html();
-  var seealsoTemplate = Handlebars.compile(seealso);
-  $(document).ready(function() {
-  	$('#seealsoContent').append(seealsoTemplate(seealsoData));
-  });
-</script>
-<!-- <footer>
+    </script>
+    <script type="text/javascript">
+      var seealso = $("#seealso-template").html();
+      var seealsoTemplate = Handlebars.compile(seealso);
+      $(document).ready(function() {
+      	$('#seealsoContent').append(seealsoTemplate(seealsoData));
+      });
+    </script>
+        <!-- <footer>
+        <div class="footer-container">
+            <div id="footer">
+            </div>
+        </div>
+    </footer> -->
+    
+  </main>
+
+  <footer>
     <div class="footer-container">
-        <div id="footer">
-        </div>
     </div>
-</footer> -->
+  </footer>
 
-<footer>
-  <div class="footer-container">
-  </div>
-</footer>
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-
-
+</div>
 </body>
 </html>
