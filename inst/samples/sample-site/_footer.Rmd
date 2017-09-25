@@ -1,5 +1,6 @@
 
-## FOOTER
+FOOTER
+======
 
 Este sitio fue construido con ddjrmd.
 Toda la información sobre nosotros está disponible en http://datasketch.co

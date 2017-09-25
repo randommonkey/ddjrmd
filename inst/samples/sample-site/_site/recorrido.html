@@ -20,6 +20,8 @@
       <script src="assets/site-0.1/handlebars.min.js"></script>
       <link href="assets/static-0.1/static.css" rel="stylesheet" />
       <script src="assets/static-0.1/static.js"></script> 
+          <script src=""></script>
+      <!-- this is nothing --> 
               <link rel="stylesheet" href="styles.css" type="text/css" /> 
     </head>
 
@@ -40,40 +42,45 @@
                   <span class="hamburger-inner"></span>
                 </span>
               </button>
-              <img src="images/logo-especial.png" alt="" class="logo">
-              <img src="images/ds.png" alt="datasketch" class="ds">
+              <a href="http://www.datasketch.co">
+                <img src="images/logo.png" alt="datasketch" class="ds">
+              </a>
             </div>
           </div>
         </nav> 
       
     <iframe src="recorrido-embed.html" width = "100%" seamless height="500px"></iframe>
 
-          <script type="text/javascript">
-       var seealsoData= {"title":"Ver también","links":[{"text":"La realidad de los árboles bogotanos","href":"realidad.html"},{"text":"Recorrido","href":"recorrido.html"}]} ;
-      </script> <script id="seealso-template" type="text/x-handlebars-template">
-          <div class="seealsoContainer">
-              <h2>{{title}}</h2>
-              {{#links}}
-              <div class="seealso">
-                  <h2>{{title}}</h2>
-                  <a href="{{link}}">link</a>
+          <!-- this is another -->
+      <h1>another html</h1> 
+          <script id="seealso-template" type="text/x-handlebars-template">
+          <div class="see-also">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-12">
+                  <h3>Artículos relacionados</h3>
+                </div>
               </div>
-              {{/links}}
+            </div>
+            <div class = "stories-boxes">
+              {{#data}}
+              <div class="story-box">
+                <a href="{{link}}">
+                    <div class="story-box-image">
+                      <h2 class="story-box-title">{{title}}</h2>
+                      {{#if img}}<img src="{{img}}" alt={{title}} class="img-responsive"/>{{/if}}
+                    </div>        
+                </a>
+              </div>
+              {{/data}}
+            </div>
           </div>
       </script>
       <script type="text/javascript">
         var seealso = $("#seealso-template").html();
         var seealsoTemplate = Handlebars.compile(seealso);
-        $(document).ready(function() {
-        	$('#seealsoContent').append(seealsoTemplate(seealsoData));
-        });
       </script> 
-          <!-- <footer>
-          <div class="footer-container">
-              <div id="footer">
-              </div>
-          </div>
-      </footer> --> 
+           
     
   <footer>
     <div class="footer-container">

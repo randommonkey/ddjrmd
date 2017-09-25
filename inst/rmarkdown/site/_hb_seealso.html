@@ -1,0 +1,27 @@
+<script id="seealso-template" type="text/x-handlebars-template">
+    <div class="see-also">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Artículos relacionados</h3>
+          </div>
+        </div>
+      </div>
+      <div class = "stories-boxes">
+        {{#data}}
+        <div class="story-box">
+          <a href="{{link}}">
+              <div class="story-box-image">
+                <h2 class="story-box-title">{{title}}</h2>
+                {{#if img}}<img src="{{img}}" alt={{title}} class="img-responsive"/>{{/if}}
+              </div>        
+          </a>
+        </div>
+        {{/data}}
+      </div>
+    </div>
+</script>
+<script type="text/javascript">
+  var seealso = $("#seealso-template").html();
+  var seealsoTemplate = Handlebars.compile(seealso);
+</script>

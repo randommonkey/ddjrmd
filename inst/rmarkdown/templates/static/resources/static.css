@@ -1,0 +1,119 @@
+html, 
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+header {
+  height: 70%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.header-content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.topnav {
+  background: #133d3b;
+  height: 50px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  margin-bottom: 20px;
+}
+.topnav.affix {
+  background: rgba(100,100,100,0.4);
+  border-bottom: 1px solid rgba(200,200,200,0.8);
+}
+.topnav .container-fluid,
+.topnav .special-wrapper {
+  height: 100%;
+}
+.topnav .special-wrapper .hamburger {
+  padding: 0;
+  padding: 4px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.topnav .special-wrapper .hamburger:focus,
+.topnav .special-wrapper .hamburger:active {
+  outline: none;
+}
+.topnav .special-wrapper .hamburger span.hamburger-inner,
+.topnav .special-wrapper .hamburger span.hamburger-inner:after,
+.topnav .special-wrapper .hamburger span.hamburger-inner:before {
+  background: #f4f4f6;
+}
+.topnav .special-wrapper img.ds {
+  filter: brightness(0) invert(1);
+  float: right;
+  height: 100%;
+  padding-right: 0px;
+  padding: 15px;
+}
+.topnav .special-wrapper img.logo {
+  height: 50px;
+}
+.full-menu {
+  background: rgba(10,10,10,0.95);
+  height: 0vh;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.3s linear;
+  width: 100%;
+}
+.full-menu.open {
+  height: 100vh;
+}
+.full-menu ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.full-menu ul li {
+  margin: 10px 0;
+}
+.full-menu ul li a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+main {
+  /* Este estilo es diferente */
+  height: 100vh;
+  padding-top: 50px;
+}
+iframe {
+  height: 100%;
+  width: 100%;
+}
+footer {
+  background: #133d3b;
+}
+footer .footer-container {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+footer .footer-container p {
+  color: #ffffff;
+  text-align: justify;
+  font-size: 15px;
+}
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .full-menu ul li a { font-size: 23px; }
+}
+@media screen and (min-width: 992px) {
+  .full-menu ul li a { font-size: 28px; }
+}

@@ -28,27 +28,27 @@
             {{/ifActive}}
             {{/data}}
         </ol>
-        {{#data}}
         <div class="carousel-inner">
-            {{#ifActive @index}}
-            <div class="item active">
-            {{else}}
-            <div class="item">
-            {{/ifActive}}
-              <div class="container">
-                  <div class="row">
-                      <div class="col-sm-6">
-                          <img src="{{img}}" alt="" class="img-responsive">
-                      </div>
-                      <div class="col-sm-6">
-                          <h2>{{title}}</h2>
-                          <p>{{paragraph}}</p>
-                      </div>
-                  </div>
-              </div>
+          {{#data}}
+          {{#ifActive @index}}
+          <div class="item active">
+          {{else}}
+          <div class="item">
+          {{/ifActive}}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="{{img}}" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-sm-6">
+                        <h2>{{title}}</h2>
+                        <p>{{paragraph}}</p>
+                    </div>
+                </div>
             </div>
+          </div>
+          {{/data}}
         </div>
-        {{/data}}
         <a class="left carousel-control" href="#tree-slides" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>

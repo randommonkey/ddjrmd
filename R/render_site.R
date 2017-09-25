@@ -56,17 +56,30 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
     if(!is.null(config$css))
       args <- c(args, "--css", rmarkdown::pandoc_path_arg(config$css))
 
+    # Header includes
+    header_includes <- NULL
+    if(!is.null(config$header)){
+      htmlfiles <- file.path(input,config$header)
+      htmlfiles <- paste(unlist(lapply(htmlfiles, readLines)), collapse = "\n")
+      header_includes <-as_tmpfile(htmlfiles)
+    }
+
+    # Body includes
+    body_includes <- NULL
+    if(!is.null(config$body)){
+      htmlfiles <- file.path(input,config$body)
+      htmlfiles <- paste(unlist(lapply(htmlfiles, readLines)), collapse = "\n")
+      body_includes <-as_tmpfile(htmlfiles)
+    }
+
     # Make navbar
     navbar_tempfile <- make_navbar(input, input_files(),config)
 
     # Make see also
     ## make it for each Rmd from site config, removing current post
-    #see_also_tempfile <- make_see_also(config,basename(x))
-    see_also <- jsonlite::toJSON(unlist(config$see_also,recursive = FALSE), auto_unbox = TRUE)
-    see_also_html_str <- paste('<script type="text/javascript">\n','var seealsoData=',see_also,";\n</script>",collapse = "")
-    see_also_handlebars <- system.file("rmarkdown/site/_see_also.html", package = "ddjrmd")
+    see_also_handlebars <- system.file("rmarkdown/site/_hb_seealso.html", package = "ddjrmd")
     see_also_handlebars <- paste(readLines(see_also_handlebars),collapse = "\n")
-    see_also_html_str <- paste(see_also_html_str,see_also_handlebars,collapse = "\n")
+    see_also_html_str <- paste(see_also_handlebars,collapse = "\n")
     see_also_tempfile <- as_tmpfile(see_also_html_str)
 
     # Make footer
@@ -82,11 +95,7 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
       # we suppress messages so that "Output created" isn't emitted
       # (which could result in RStudio previewing the wrong file)
 
-      # see_also_tempfile <- NULL
-      # if(!is.null(config$see_also)){
-      #   args <- c(args, pandoc_metadata_arg("see_also",TRUE))
-      #   see_also_tempfile <- make_see_also(config,basename(x))
-      # }
+
 
       output <- suppressMessages(
         rmarkdown::render(x,
@@ -96,12 +105,15 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
                                                 self_contained = self_contained,
                                                 #pandoc_args = c("--metadata","debug=TRUE"),
                                                 pandoc_args = args,
-                                                includes = list(before_body = navbar_tempfile,
-                                                                after_body = c(
-                                                                  see_also_tempfile,
-                                                                  footer_tempfile)),
+                                                includes = list(
+                                                  in_header = header_includes,
+                                                  before_body = navbar_tempfile,
+                                                  after_body = c(
+                                                    body_includes,
+                                                    see_also_tempfile,
+                                                    footer_tempfile)),
                                                 extra_dependencies = extra_dependencies
-                                                ),
+                          ),
                           envir = envir,
                           quiet = quiet,
                           encoding = encoding)

@@ -73,9 +73,6 @@ story <- function(number_sections = FALSE,
 
   pre_processor <- function(metadata, input_file, runtime,
                             knit_meta, files_dir, output_dir) {
-    message("\n\nMETADATA\n\n", metadata)
-    cat("METADATA")
-    str(metadata)
 
     if (is.null(lib_dir)) lib_dir <- files_dir
 

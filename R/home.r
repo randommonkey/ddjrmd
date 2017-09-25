@@ -79,9 +79,8 @@ home <- function(number_sections = FALSE,
   for (css_file in css)
     args <- c(args, "--css", rmarkdown::pandoc_path_arg(css_file))
 
-
   # Make handlebars
-  handlebars_home_file <- system.file("rmarkdown/site/_handlebars_home.html", package = "ddjrmd")
+  handlebars_home_file <- system.file("rmarkdown/site/_hb_home.html", package = "ddjrmd")
   handlebars_home_lines <- paste(readLines(handlebars_home_file),collapse = "\n")
   handlebars_home_tempfile <- as_tmpfile(handlebars_home_lines,prefix = "handlebars-home-")
   includes$after_body <- c(includes$after_body, handlebars_home_tempfile)

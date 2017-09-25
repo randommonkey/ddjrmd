@@ -1,26 +1,13 @@
-/* ScrollReveal */
-window.sr = ScrollReveal();
-sr.reveal('.story-box', { duration: 1800 }, 300);
-
 $(document).ready(function() {
 
-    $('.hamburger').click(function() {
-        $(this).toggleClass('is-active')
-        $('.full-menu').toggleClass('open')
-        $('.topnav').toggleClass('open')
-    });
-
-    $('.topnav').affix({ offset: { top: 100 } });
-
+    var footer = $('#footer').children().not('h1')
+    $('.footer-container').append(footer)
     /* Responsive images */
     $('img').addClass('img-responsive');
 
     /* Center images */
     $('img').css({ 'margin-left': 'auto', 'margin-right': 'auto' });
 
-    // /* Main container */
-    // var main = document.createElement('main');
-    // $('header').after(main);
     var main = $('main');
 
     /* Intro container */
@@ -34,17 +21,13 @@ $(document).ready(function() {
         var section = {}
         section.id = $(this).attr('id');
         section.type = $(this).attr('class').replace("section level1 ", "");
-        // var $div = $("<div>", { id: "new-" + section.id, "class": section.type });
-        // $("body").append($div);
-        // console.log($(this))
         if (section.type == "boxes") {
-            // console.log("#" + section.id + '>.section.level2')
             var boxes = $("#" + section.id + '>.section.level2');
             /* Delete footer if exists */
-            boxes = boxes.filter(function(index, section) {
-                var section = $(section);
-                return section.attr('id') !== 'footer';
-            });
+            // boxes = boxes.filter(function(index, section) {
+            //     var section = $(section);
+            //     return section.attr('id') !== 'footer';
+            // });
             section.data = boxes.map(function(index, box) {
                 var link = $(box).find('a')[0];
                 link = $(link).attr("href")
@@ -52,13 +35,9 @@ $(document).ready(function() {
                 title = $(title).text()
                 var img = $(box).find('img')[0];
                 img = $(img).attr("src")
-                // var paragraph = $(box).find('p');
-                // paragraph = $(paragraph).outerHTML();
                 var paragraph = "paragraph";
                 return ({ title: title, link: link, img: img, paragraph: paragraph })
             })
-            /* Place link at top */
-            // console.log("BOXES", section.data)
         }
         if (section.type == "carrousel") {
             var slides = $("#" + section.id + '>.section.level2');
@@ -73,9 +52,8 @@ $(document).ready(function() {
                 title = $(title).text()
                 var img = $(slide).find('img')[0];
                 img = $(img).attr("src")
-                // var paragraph = $(slide).find('p');
-                // paragraph = $(paragraph).outerHTML();
-                var paragraph = "paragraph";
+                var paragraph = $(slide).find('p')[0];
+                paragraph = $(paragraph).text()
                 return ({ title: title, link: link, img: img, paragraph: paragraph })
             })
         }
@@ -95,7 +73,7 @@ $(document).ready(function() {
         return section
     });
     // Remove all parsed sections
-    $('.section.level1').remove();
+    $('.section.level1').not('#footer').remove();
 
     console.log("SECTIONS", sections)
 
@@ -116,10 +94,8 @@ $(document).ready(function() {
         }
     })
 
-
-
-    // Handle layout-twocolumn
-
-
+    /* ScrollReveal */
+    window.sr = ScrollReveal();
+    sr.reveal('.story-box', { duration: 1800 }, 300);
 
 })

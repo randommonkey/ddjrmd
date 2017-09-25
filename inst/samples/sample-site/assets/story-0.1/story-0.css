@@ -1,0 +1,113 @@
+.topnav {
+    background: #133d3b;
+    height: 50px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.post-title {
+    color: #000000;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.post-date {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.post-cover-img {
+    background: no-repeat center center;
+    background-size: cover;
+    height: 40vh;
+    /*margin: 20px 0;*/
+    width: 100%;
+    margin: 0 auto;
+}
+
+.fullwidth {
+    max-width: 100%;
+    margin: auto;
+}
+
+.fullwidth > p > img{
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+img{
+  max-width: 100%;
+}
+
+.post-margin {
+    max-width: 800px;
+    margin: 0 auto;
+}    
+
+p.post-margin {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    margin: 0 auto 14px;
+}
+
+h2.post-margin {
+    font-size: 24px;
+}
+
+h3.post-margin {
+    font-size: 20px;
+}
+
+.post-margin > img {
+  display: block;
+    margin: 0 auto;
+} 
+
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) {
+    .full-menu ul li a {
+        font-size: 23px;
+    }
+    .post-margin {
+        font-size: 18px;
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .full-menu ul li a {
+        font-size: 28px;
+    }
+    .post-margin {
+        font-size: 18px;
+        width: 55%;
+    }
+}

@@ -15,3 +15,10 @@ see_also:
     - text: "Recorrido"
       href: recorrido.html
 css: styles.css
+header:
+  - somescript.html
+  - tmp.html
+body:
+  - another.html
+body_story:
+  - another.html
