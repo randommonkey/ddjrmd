@@ -28,11 +28,15 @@
         $include-before$ 
       $endfor$ 
 
-    <iframe src="$file$" width = "100%" seamless $if(height)$height="$height$"$endif$></iframe>
+    <iframe src="https://$iframeUrl$" width = "100%" frameBorder="0" seamless $if(height)$height="$height$"$endif$ class="iframeResize"></iframe>
 
     $for(include-after)$ 
       $include-after$ 
     $endfor$
+
+    $if(iframeResize)$
+    <script>iFrameResize({ log: false }, '.iframeResize')</script>
+    $endif$
 
   <footer>
     <div class="footer-container">

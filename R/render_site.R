@@ -42,7 +42,7 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
                                           src = system.file("rmarkdown", "site",
                                                             package = "ddjrmd"),
                                           stylesheet=c("hamburgers.min.css", "site.css"),
-                                          script = c("site.js","handlebars.min.js"),
+                                          script = c("site.js","handlebars.min.js","iframeResizer.min.js"),
                                           all_files = FALSE)
     extra_dependencies <- list(dep_site)
 

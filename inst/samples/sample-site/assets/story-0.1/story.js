@@ -4,7 +4,9 @@ $(document).ready(function() {
     $('main img').addClass('img-responsive')
     /* Center images */
     $('main img').css({ 'margin-left': 'auto', 'margin-right': 'auto' })
-    $('.section.level2').children().not(".fullwidth").addClass('post-margin');
+    $('.section.level2').children().not(".fullwidth").not(".level3").addClass('post-margin');
+    $('.section.level3').children().not(".fullwidth").not(".level4").addClass('post-margin');
+    $('.section.level4').children().not(".fullwidth").addClass('post-margin');
     $('main > p').not(".post-fullwidth").addClass('post-margin');
     $('main > blockquote').not(".post-fullwidth").addClass('post-margin');
 
@@ -35,5 +37,23 @@ $(document).ready(function() {
     // Footer
     $('.footer-container').append($('#footer'))
     $('#footer').find('h1').remove()
+
+
+    // Handle layout-twocolumn
+
+    $(".section.level1.layout-twocolumn").map(function(){
+        var twocolSection = $(this)
+        var twocolSectionContent = $(twocolSection).find(".section.level2");
+        $(twocolSection).find(".section.level2").find("h2").remove();
+        var $div = $("<div>", {"class": "apps-box" });
+        $(twocolSection).addClass("app-box");
+        twocolSectionContent.addClass("app");
+        $div.append(twocolSectionContent);
+        // $('.section.level1').remove();
+        console.log($div)
+        $(twocolSection).append($div);
+    });
+
+    $('main').find('h1').not(".post-title").remove()
 
 })

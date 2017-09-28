@@ -1,8 +1,7 @@
 ---
 title: "Recorrido"
 output: ddjrmd::static
-iframeUrl: recorrido-embed.html
-iframeResizer: TRUE
+iframeUrl: randommonkey.shinyapps.io/2017-05-09-quijote/
 height: 500px
 ---
 

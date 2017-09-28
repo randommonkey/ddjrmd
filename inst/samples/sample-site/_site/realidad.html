@@ -18,13 +18,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.1/hamburgers.min.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora:400,700" rel="stylesheet">
 
 
 <link href="assets/site-0.1/hamburgers.min.css" rel="stylesheet" />
 <link href="assets/site-0.1/site.css" rel="stylesheet" />
 <script src="assets/site-0.1/site.js"></script>
 <script src="assets/site-0.1/handlebars.min.js"></script>
+<script src="assets/site-0.1/iframeResizer.min.js"></script>
 <link href="assets/story-0.1/story.css" rel="stylesheet" />
 <script src="assets/story-0.1/story.js"></script>
 <script src=""></script>
@@ -74,11 +75,13 @@
     
     <p>Este es un texto introductorio opcional.</p>
     <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
+    <div id="hola-h1" class="section level1">
+    <h1>hola h1</h1>
     <div id="first-post" class="section level2">
     <h2>First post</h2>
-    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+    <p><a href="abstract.html">This is the abstract</a>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
     <blockquote>
-    <p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>quis nostrud exercitation <a href="ut%20aliquip">ullamco laboris nisi</a> ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </blockquote>
     <div class="fullwidth">
     <p><img src="http://via.placeholder.com/1350x150"></p>
@@ -91,12 +94,38 @@
     </div>
     <div id="third-post" class="section level2">
     <h2>Third post</h2>
+    <p>testes</p>
+    </div>
+    </div>
+    <div id="post-continues" class="section level1">
+    <h1>Post continues</h1>
+    <div id="third-post-1" class="section level2">
+    <h2>Third post</h2>
     <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div class="fullwidth">
     <p>This is a full width paragraph… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repr</p>
     </div>
     <p><img src="http://via.placeholder.com/350x150" /></p>
     </div>
+    </div>
+    <div id="stripe" class="section level1 layout-twocolumn stripe">
+    <h1>stripe</h1>
+    <div id="left-side" class="section level2">
+    <h2>Left side</h2>
+    <div id="this-is-the-left-side-1" class="section level4">
+    <h4>This is the left side 1</h4>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    </div>
+    </div>
+    <div id="right-side" class="section level2">
+    <h2>Right Side</h2>
+    <div id="this-is-the-right-side-1" class="section level4">
+    <h4>This is the right side 1</h4>
+    </div>
+    </div>
+    </div>
+    <div id="post-continues-1" class="section level1">
+    <h1>post continues</h1>
     <div id="fourth-post" class="section level2">
     <h2>Fourth post</h2>
     <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -106,13 +135,32 @@
     <p>Se ignora esto porque tiene nivel 3</p>
     <p>Commander Jeffrey David Sinclair: Everyone lies, Michael. The innocent lie because they don’t want to be blamed for something they didn’t do and the guilty lie because they don’t have any other choice. Lt. Corwin: Do we trust no-one then? Cmdr. Susan Ivanova: No, trust Ivanova, trust yourself, anybody else, shoot’em. Susan Ivanova: If I live through this without completely losing my mind, it will be a miracle of Biblical proportions.</p>
     <p>Lt. Corwin: [aside] Well, there goes my faith in the Almighty. [Opening narration, season 3] Susan Ivanova: The Babylon Project was our last, best hope for peace. It failed. But in the year of the Shadow War, it became something greater: our last, best hope for victory. The year is 2260. The place - Babylon 5. Alfred Bester: Being a telepath means you’re special and rare and valuable.</p>
+    </div>
+    </div>
+    </div>
+    <div id="stripe-1" class="section level1 layout-twocolumn stripe">
+    <h1>stripe</h1>
+    <div id="left-side-1" class="section level2">
+    <h2>Left side</h2>
+    <div id="this-is-the-left-side-2" class="section level4">
+    <h4>This is the left side 2</h4>
+    <p>This is the abstract. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    </div>
+    </div>
+    <div id="right-side-1" class="section level2">
+    <h2>Right Side</h2>
+    <div id="this-is-the-right-side-2" class="section level4">
+    <h4>This is the right side 2</h4>
+    </div>
+    </div>
+    </div>
+    <div id="post" class="section level1">
+    <h1>post</h1>
     <div id="level-4" class="section level4">
     <h4>Level 4</h4>
-    <p>Se ignora esto porque tiene nivel 4</p>
     <p>Delenn: We are star stuff. We are the universe made manifest trying to figure itself out.</p>
     <p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future.</p>
     <p>Captain John Sheridan: If more of our so-called leaders would walk the same streets as the people who voted them in, live in the same buildings, eat the same food instead of hiding behind glass and steel and bodyguards, maybe we’d get better leadership and a little more concern for the future. Kosh Naranek: Understanding is a three-edged sword. Alfred Bester: Much as it might offend their sense of perspective, not everything is about Babylon 5.</p>
-    </div>
     </div>
     </div>
     <div id="see-also" class="section level1">
