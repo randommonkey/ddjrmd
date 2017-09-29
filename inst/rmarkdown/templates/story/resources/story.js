@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var disqus = $('#disqus_thread');
 
     /* Imágenes responsive*/
     $('main img').addClass('img-responsive')
@@ -73,5 +74,7 @@ $(document).ready(function() {
             1920: { items: 8 }
         }
     });
+    $('.see-also').before(disqus)
+
 
 })

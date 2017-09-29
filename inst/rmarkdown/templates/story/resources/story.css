@@ -168,6 +168,7 @@ main .see-also {
     background: #ffffe3;
     font-family: 'Lora', serif;
 }
+
 /*main .see-also .stories-boxes {
     display: flex;
     flex-wrap: wrap;
@@ -178,6 +179,10 @@ main .see-also .story-box {
     position: relative;
     width: 50%;
 }*/
+main .see-also .stories-boxes {
+   margin: 20px 0;
+}
+
 main .see-also .story-box .story-box-image {
     position: relative;
 }

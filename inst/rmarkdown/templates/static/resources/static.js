@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    var disqus = $('#disqus_thread');
+
     // Handle seealso
     var seealso = {};
     seealso.data = $('#see-also>.section.level2').map(function() {
@@ -50,4 +52,5 @@ $(document).ready(function() {
     var footer = $('#footer').children().not('h1')
     $('.footer-container').append(footer)
 
+    $('.see-also').before(disqus)
 });

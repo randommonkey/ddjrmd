@@ -1,78 +1,70 @@
-  <script id="boxes-template" type="text/x-handlebars-template">
-      <div class="stories">
-        <div class = "container">
-          <div class = "stories-box">
-            {{#data}}
-            <div class="story-box">
-              <a href="{{link}}">
-                  <div class="story-box-image">
-                    <h2 class="story-box-title">{{title}}</h2>
-                    {{#if img}}<img src="{{img}}" alt={{title}} class="img-responsive"/>{{/if}}
-                  </div>        
-              </a>
+<script id="boxes-template" type="text/x-handlebars-template">
+    <div class="stories">
+        <div class="container">
+            <div class="stories-box">
+                {{#data}}
+                <div class="story-box">
+                    <a href="{{link}}">
+                        <div class="story-box-image">
+                            <h2 class="story-box-title">{{title}}</h2> {{#if img}}<img src="{{img}}" alt={{title}} class="img-responsive" />{{/if}}
+                        </div>
+                    </a>
+                </div>
+                {{/data}}
             </div>
-            {{/data}}
-          </div>
-        </div> 
-      </div>
-  </script>
-
-  <script id="carrousel-template" type="text/x-handlebars-template">
+        </div>
+    </div>
+</script>
+<script id="carrousel-template" type="text/x-handlebars-template">
     <div class="carousel slide" data-ride="carousel" id="tree-slides">
         <ol class="carousel-indicators">
-            {{#data}}
-            {{#ifActive @index}}
+            {{#data}} {{#ifActive @index}}
             <li data-slide-to="{{@index}}" data-target="#tree-slides" class="active"></li>
             {{else}}
             <li data-slide-to="{{@index}}" data-target="#tree-slides"></li>
-            {{/ifActive}}
-            {{/data}}
+            {{/ifActive}} {{/data}}
         </ol>
         <div class="carousel-inner">
-          {{#data}}
-          {{#ifActive @index}}
-          <div class="item active">
-          {{else}}
-          <div class="item">
-          {{/ifActive}}
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img src="{{img}}" alt="" class="img-responsive">
-                    </div>
-                    <div class="col-sm-6">
-                        <h2>{{title}}</h2>
-                        <p>{{paragraph}}</p>
+            {{#data}} {{#ifActive @index}}
+            <div class="item active">
+                {{else}}
+                <div class="item">
+                    {{/ifActive}}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <img src="http://especiales.datasketch.co/arboles-bogota/{{img}}" alt="" class="img-responsive">
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <h2>{{title}}</h2>
+                                <p class="hidden-xs">{{paragraph}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {{/data}}
             </div>
-          </div>
-          {{/data}}
+            <a class="left carousel-control" href="index.html#tree-slides" role="button" data-slide="prev">
+                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                 <span class="sr-only">Previous</span>
+               </a>
+            <a class="right carousel-control" href="index.html#tree-slides" role="button" data-slide="next">
+                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                 <span class="sr-only">Next</span>
+               </a>
         </div>
-        <a class="left carousel-control" href="#tree-slides" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#tree-slides" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
-  </script>
+</script>
+<script type="text/javascript">
+Handlebars.registerHelper('ifActive', function(index, options) {
+    if (index == 0) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
 
-  <script type="text/javascript">
-
-            Handlebars.registerHelper('ifActive', function(index, options) {
-                if (index == 0) {
-                  return options.fn(this);
-                }
-                else {
-                 return options.inverse(this);
-               }
-            });
-
-    var boxes = $("#boxes-template").html();
-    var boxesTemplate = Handlebars.compile(boxes);
-    var carrousel = $("#carrousel-template").html();
-    var carrouselTemplate = Handlebars.compile(carrousel);
-  </script>
+var boxes = $("#boxes-template").html();
+var boxesTemplate = Handlebars.compile(boxes);
+var carrousel = $("#carrousel-template").html();
+var carrouselTemplate = Handlebars.compile(carrousel);
+</script>
