@@ -1,48 +1,109 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" $if(lang)$ lang="$lang$" xml:lang="$lang$" $endif$>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="pandoc" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$" />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-    <title>$if(title)$$title$$endif$</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    $for(header-includes)$ 
-      $header-includes$ 
-    $endfor$ 
-    $for(css)$
-      <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/> 
-    $endfor$
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>$if(title)$$title$$endif$</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.1/hamburgers.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Lora:400,400i,700" rel="stylesheet">
+
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+<!-- $if(highlightjs)$
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css"
+      $if(html5)$$else$type="text/css" $endif$/>
+<script src="$highlightjs$/highlight.js"></script>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+$endif$ -->
+
+<!-- $if(highlighting-css)$
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+$highlighting-css$
+</style>
+$endif$ -->
+
+$for(css)$
+<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+
 </head>
 
-<body>
+<body class="$if(content_class)$$content_class$$endif$">
+  <div id="wrapper">
+  <header>
+    <!-- init navbar -->
+    $for(include-before)$
+    $include-before$
+    $endfor$
+    <!-- end navbar -->
+  </header>
+  <main>
 
-      $for(include-before)$ 
-        $include-before$ 
-      $endfor$ 
+    <!-- <h1 class="post-title">$if(title)$$title$$endif$</h1> -->
+    <!-- <span class="post-date">$if(publishedDate)$Publicado $publishedDate$$endif$ $if(author)$$author$$endif$</span> -->
+    $if(image)$
+    <div class="post-cover-img" style="background-image: url($image$)"></div>
+    $endif$
+
+    $body$
+
+    $for(include-after)$
+    $include-after$
+    $endfor$
 
     <iframe src="https://$iframeUrl$" width = "100%" frameBorder="0" seamless $if(height)$height="$height$"$endif$ class="iframeResize"></iframe>
-
-    $for(include-after)$ 
-      $include-after$ 
-    $endfor$
 
     $if(iframeResize)$
     <script>iFrameResize({ log: false }, '.iframeResize')</script>
     $endif$
 
+    <div id="seealsoContent"></div>
+
+  </main>
+
   <footer>
     <div class="footer-container">
     </div>
   </footer>
-    
-</body>
 
+  $if(mathjax-url)$
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "$mathjax-url$";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  $endif$
+
+
+</div>
+</body>
 </html>

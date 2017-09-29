@@ -28,9 +28,12 @@
         </style>
           <link href="assets/site-0.1/hamburgers.min.css" rel="stylesheet" />
       <link href="assets/site-0.1/site.css" rel="stylesheet" />
+      <link href="assets/site-0.1/owl.carousel.min.css" rel="stylesheet" />
+      <link href="assets/site-0.1/owl.theme.default.css" rel="stylesheet" />
       <script src="assets/site-0.1/site.js"></script>
       <script src="assets/site-0.1/handlebars.min.js"></script>
       <script src="assets/site-0.1/iframeResizer.min.js"></script>
+      <script src="assets/site-0.1/owl.carousel.min.js"></script>
       <link href="assets/home-0.1/home.css" rel="stylesheet" />
       <script src="assets/home-0.1/home.js"></script> 
           <script src=""></script>
@@ -60,6 +63,7 @@
                 </span>
               </button>
               <a href="http://www.datasketch.co">
+                <img src="images/logo-especial.png" alt="Árboles de Bogotá" class="logo">
                 <img src="images/logo.png" alt="datasketch" class="ds">
               </a>
             </div>
@@ -158,9 +162,8 @@
       <div id="parsedContent"></div>
 
       
-              <!-- this is another -->
-        <h1>another html</h1> 
-              <script id="seealso-template" type="text/x-handlebars-template">
+              <!-- this is another HTML in body --> 
+                  <script id="seealso-template" type="text/x-handlebars-template">
             <div class="see-also">
               <div class="container-fluid">
                 <div class="row">
@@ -169,12 +172,12 @@
                   </div>
                 </div>
               </div>
-              <div class = "stories-boxes">
+              <div class = "stories-boxes owl-carousel">
                 {{#data}}
                 <div class="story-box">
                   <a href="{{link}}">
                       <div class="story-box-image">
-                        <h2 class="story-box-title">{{title}}</h2>
+                        <h3 class="story-box-title">{{title}}</h3>
                         {{#if img}}<img src="{{img}}" alt={{title}} class="img-responsive"/>{{/if}}
                       </div>        
                   </a>

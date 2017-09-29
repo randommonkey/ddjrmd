@@ -2,6 +2,7 @@
 title: "Recorrido"
 output: ddjrmd::static
 iframeUrl: randommonkey.shinyapps.io/2017-05-09-quijote/
+iframeResize: true
 height: 500px
 ---
 

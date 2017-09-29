@@ -92,6 +92,12 @@ header {
   font-size: 16px;
   text-decoration: none;
 }
+
+/*hide especial logo*/
+.logo{
+  display: none;
+}
+
 video {
   z-index: -1;
   height: 100%;
@@ -199,6 +205,17 @@ main .stories .story-box .story-box-title {
 .right.carousel-control {
   background: transparent;
 }
+/*carousel colors*/
+.glyphicon.glyphicon-chevron-left,
+.glyphicon.glyphicon-chevron-right{
+  color: #133d3c;
+}
+.carousel-indicators li {
+  border-color: #133d3c;
+  background-color: #133d3c;
+}
+
+
 .apps-box {
   display: flex;
   flex-wrap: wrap;

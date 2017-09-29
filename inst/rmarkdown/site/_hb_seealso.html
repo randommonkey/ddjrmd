@@ -1,4 +1,4 @@
-<script id="seealso-template" type="text/x-handlebars-template">
+    <script id="seealso-template" type="text/x-handlebars-template">
     <div class="see-also">
       <div class="container-fluid">
         <div class="row">
@@ -7,12 +7,12 @@
           </div>
         </div>
       </div>
-      <div class = "stories-boxes">
+      <div class = "stories-boxes owl-carousel">
         {{#data}}
         <div class="story-box">
           <a href="{{link}}">
               <div class="story-box-image">
-                <h2 class="story-box-title">{{title}}</h2>
+                <h3 class="story-box-title">{{title}}</h3>
                 {{#if img}}<img src="{{img}}" alt={{title}} class="img-responsive"/>{{/if}}
               </div>        
           </a>

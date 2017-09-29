@@ -162,7 +162,7 @@ main .see-also {
     background: #ffffe3;
     font-family: 'Lora', serif;
 }
-main .see-also .stories-boxes {
+/*main .see-also .stories-boxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly !important;
@@ -171,7 +171,7 @@ main .see-also .story-box {
     margin-bottom: 40px;
     position: relative;
     width: 50%;
-}
+}*/
 main .see-also .story-box .story-box-image {
     position: relative;
 }
@@ -240,6 +240,34 @@ blockquote p {
   width: 100%;
 }
 
+.owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+}
+.owl-prev {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 35px;
+    /* color: #133d3b; */
+    color: #fff;
+    transform: translateY(-50%);
+}
+.owl-prev i,
+.owl-next i {
+    text-shadow: 5px 5px 10px #000;
+}
+.owl-next {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 35px;
+    /* color: #133d3b; */
+    color: #fff;
+    transform: translateY(-50%);
+}
+
 
 footer {
     background: #133d3b;
@@ -261,7 +289,6 @@ footer .footer-container p {
         font-size: 18px;
         width: 75%;
     }
-    main .see-also .story-box { width: 25%; }
 }
 @media screen and (min-width: 992px) {
     .full-menu ul li a { font-size: 28px; }
@@ -269,5 +296,4 @@ footer .footer-container p {
         font-size: 18px;
         width: 55%;
     }
-    main .see-also .story-box { width: 25%; }
 }

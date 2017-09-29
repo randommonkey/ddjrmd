@@ -41,8 +41,8 @@ ddj_site <- function(input, encoding = getOption("encoding"), ...) {
     dep_site <- htmltools::htmlDependency("site", "0.1",
                                           src = system.file("rmarkdown", "site",
                                                             package = "ddjrmd"),
-                                          stylesheet=c("hamburgers.min.css", "site.css"),
-                                          script = c("site.js","handlebars.min.js","iframeResizer.min.js"),
+                                          stylesheet=c("hamburgers.min.css", "site.css","owl.carousel.min.css","owl.theme.default.css"),
+                                          script = c("site.js","handlebars.min.js","iframeResizer.min.js","owl.carousel.min.js"),
                                           all_files = FALSE)
     extra_dependencies <- list(dep_site)
 
