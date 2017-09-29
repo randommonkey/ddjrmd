@@ -10,7 +10,6 @@ navbar:
 css: styles.css
 header:
   - somescript.html
-  - tmp.html
 body:
   - another.html
 body_story:

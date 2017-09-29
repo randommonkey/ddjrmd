@@ -158,6 +158,12 @@ h3.post-margin {
 .post-margin img {
     margin: 0 auto;
 }
+
+iframe.post-margin {
+    margin: 0 auto;
+    display: block;
+}
+
 main .see-also {
     background: #ffffe3;
     font-family: 'Lora', serif;

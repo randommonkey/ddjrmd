@@ -1,10 +1,13 @@
 ---
 title: "Recorrido"
 output: ddjrmd::static
-iframeUrl: recorrido-embed.html
+iframeUrl: tmp.html
 iframeResizer: TRUE
-height: 500px
+iframeHeight: 1000px
 ---
+
+```{r, child="_seealso.Rmd"}
+```
 
 ```{r, child="_footer.Rmd"}
 ```

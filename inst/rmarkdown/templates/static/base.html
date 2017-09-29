@@ -76,11 +76,7 @@ $endfor$
     $include-after$
     $endfor$
 
-    <iframe src="https://$iframeUrl$" width = "100%" frameBorder="0" seamless $if(height)$height="$height$"$endif$ class="iframeResize"></iframe>
-
-    $if(iframeResize)$
-    <script>iFrameResize({ log: false }, '.iframeResize')</script>
-    $endif$
+    <div id="iframeContainer"></div>
 
     <div id="seealsoContent"></div>
 
@@ -100,6 +96,25 @@ $endfor$
       script.src  = "$mathjax-url$";
       document.getElementsByTagName("head")[0].appendChild(script);
     })();
+  </script>
+  $endif$
+
+  $if(iframeUrl)$
+  <script type="text/javascript">
+    var iframeUrl = '$iframeUrl$';
+    if(iframeUrl.indexOf("<a href=") !== -1){
+      iframeUrl = jQuery(iframeUrl).attr('href');    
+    }
+    var iframeHeight = "500px";
+    $if(iframeHeight)$
+    iframeHeight = '$iframeHeight$';
+    $endif$
+    jQuery(document).ready(function(){
+      jQuery('<iframe>', { src: iframeUrl, frameBorder:"0", width:"100%", height: iframeHeight, class:"iframeResize"}).appendTo(jQuery('#iframeContainer'));
+      $if(iframeResize)$
+        iFrameResize({ log: false, minHeight: 600}, '.iframeResize')
+      $endif$
+    });
   </script>
   $endif$
 
