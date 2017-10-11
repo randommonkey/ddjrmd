@@ -79,6 +79,7 @@ header {
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
+    font-family: 'Oswald', sans-serif;
 }
 .full-menu ul li {
     margin: 10px 0;

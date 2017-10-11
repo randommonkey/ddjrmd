@@ -58,9 +58,12 @@
 
       <div class="header-content">
         <div class="header-inner">
+          $if(logo_special)$
+          <img src="$logo_special$" alt="logo-especial"/>
+          $else$
           <h1>$if(title)$$title$$endif$</h1>
+          $endif$
           <p>$if(subtitle)$$subtitle$$endif$</p>
-          $if(logo_special)$<img src="$logo_special$" alt="logo-especial"/>$endif$
         </div>
       </div>
     </header>
