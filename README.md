@@ -6,7 +6,13 @@ Create Rmd documents for ddj pieces
 ## Install
 
 ```
-devtools::install_github("randommonkey/ddjrmd",
-                         auth_token = "da101e3b96074141cf46f07a32e075bd20771875")
+devtools::install_github("randommonkey/ddjrmd")
 ```
+
+This package was used to create a static site like this:
+
+http://especiales.datasketch.co/arboles-bogota
+
+There is still a lot of work to do, this was a first experiment
+
 
